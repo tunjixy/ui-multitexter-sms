@@ -15,6 +15,8 @@ export default function useAuth() {
     token.value = response.token
     user.value = response.data
 
+    fetchUserDetails()
+
     if (redirectTo) {
       return navigateTo(redirectTo)
     }
