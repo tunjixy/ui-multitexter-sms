@@ -98,15 +98,6 @@
   transform: translateX(-100%);
 }
 
-/* .slide-drawer-enter-active,
-.slide-drawer-leave-active {
-  transition: all 0.2s ease-out;
-}
-.slide-drawer-enter-from,
-.slide-drawer-leave-to {
-  transform: translateX(-100%);
-} */
-
 /* .slide-over-enter-active,
 .slide-over-leave-active {
   transition: transform 0.3s ease-out;
