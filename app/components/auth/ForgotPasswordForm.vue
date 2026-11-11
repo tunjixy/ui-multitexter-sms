@@ -1,0 +1,87 @@
+<template>
+  <div class="mx-auto w-full py-4 sm:py-0 md:max-w-lg">
+    <p class="text-2xl font-bold md:text-3xl">Reset your password</p>
+    <p class="text-muted-foreground mt-1">
+      Enter your email to reset your password
+    </p>
+    <div class="border-border bg-surface mt-6 rounded-lg border p-6">
+      <form @submit="onSubmit">
+        <UiInput
+          id="email"
+          v-model="email"
+          label="Email address"
+          type="email"
+          name="email"
+          :error="errors.email"
+        />
+
+        <UiFormError v-if="errorMessage" :message="errorMessage" />
+
+        <UiButton
+          type="submit"
+          raised
+          block
+          radius="md"
+          :disabled="disabled"
+          :loading="loading"
+          class="mt-5"
+        >
+          {{ loading ? '' : 'Continue' }}
+        </UiButton>
+        <p class="mt-3 text-center text-sm">
+          <NuxtLink
+            to="/login"
+            class="text-primary inline-flex items-center gap-1.5 font-semibold"
+            :class="{ 'pointer-events-none opacity-50': loading }"
+            :aria-disabled="loading"
+            :tabindex="loading ? -1 : undefined"
+          >
+            <ArrowLeft class="size-4" />
+            Back to login
+          </NuxtLink>
+        </p>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import * as Yup from 'yup'
+import { ArrowLeft } from '@lucide/vue'
+import { useField, useForm } from 'vee-validate'
+import { apiClient } from '@/repository/api'
+
+const { $toast } = useNuxtApp()
+
+const schema = Yup.object().shape({
+  email: Yup.string().required().email().label('Email address').trim(),
+})
+const { errors, handleSubmit, meta } = useForm({
+  validationSchema: schema,
+  initialValues: {
+    email: '',
+  },
+})
+const { value: email } = useField<string>('email')
+const loading = ref(false)
+const errorMessage = ref('')
+
+const disabled = computed(() => {
+  return loading.value || !meta.value.valid
+})
+
+const onSubmit = handleSubmit(async (values) => {
+  try {
+    loading.value = true
+    errorMessage.value = ''
+    const response = await apiClient.auth.forgotPassword(values.email)
+    if (response.status === 1) {
+      $toast.success(response.msg)
+    }
+  } catch (err) {
+    errorMessage.value = formatErrorResponse(err)
+  } finally {
+    loading.value = false
+  }
+})
+</script>

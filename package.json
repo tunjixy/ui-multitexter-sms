@@ -1,0 +1,45 @@
+{
+  "name": "ui-multitexter-sms",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port=5500",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.70.0",
+    "@nuxt/image": "^2.2.1",
+    "@nuxtjs/color-mode": "^4.1.0",
+    "@nuxtjs/sitemap": "^9.1.0",
+    "@pinia/nuxt": "^1.0.3",
+    "@tailwindcss/vite": "^4.3.5",
+    "@unhead/vue": "^3.4.3",
+    "@vue/devtools-api": "^8.2.1",
+    "nuxt": "^4.6.4",
+    "nuxt-schema-org": "^7.0.1",
+    "pinia": "^4.1.0",
+    "tailwindcss": "^4.3.5",
+    "unhead": "^3.4.3",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.44",
+    "vue-router": "^5.4.0",
+    "vue-sonner": "^2.0.9",
+    "vue3-recaptcha-v2": "^2.1.0",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.17.0",
+    "@tailwindcss/typography": "^0.5.20",
+    "@vueuse/core": "^15.0.0",
+    "@vueuse/nuxt": "^15.0.0",
+    "eslint": "^10.14.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwind-scrollbar": "^4.0.2",
+    "typescript": "^6.0.3"
+  }
+}
