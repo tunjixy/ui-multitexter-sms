@@ -194,8 +194,8 @@ export class ApiClient {
       this.post<RequestVerificationLinkRes>(apiRoutes.user.activate, body),
     resendActivationCode: (email: string): Promise<ActivateUserRes> =>
       this.post<ActivateUserRes>(apiRoutes.user.resendActivation, { email }),
-    detail: (): Promise<UserDetailRes> =>
-      this.post<UserDetailRes>(apiRoutes.user.detail),
+    detail: (options?: ApiOptions): Promise<UserDetailRes> =>
+      this.post<UserDetailRes>(apiRoutes.user.detail, undefined, options),
   }
 
   // Contact API methods

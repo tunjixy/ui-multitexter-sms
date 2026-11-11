@@ -15,7 +15,7 @@ export default function useAuth() {
     token.value = response.token
     user.value = response.data
 
-    fetchUserDetails()
+    fetchUserDetails(response.token)
 
     if (redirectTo) {
       return navigateTo(redirectTo)
@@ -23,9 +23,11 @@ export default function useAuth() {
     return navigateTo('/dashboard/compose-sms')
   }
 
-  const fetchUserDetails = async () => {
+  const fetchUserDetails = async (token?: string) => {
     try {
-      const response = await apiClient.user.detail()
+      const response = await apiClient.user.detail(
+        token ? { authorization: `Bearer ${token}` } : undefined,
+      )
       if (response) {
         userDetail.value = response.success
       }

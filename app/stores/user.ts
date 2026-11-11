@@ -5,6 +5,7 @@ import { COOKIE_NAMES } from '@/repository/constant'
 
 export const useUserStore = defineStore('user', () => {
   const token = useCookie<string | null>(COOKIE_NAMES.AUTH_TOKEN)
+  // const lastVisit = useCookie<string | null>(COOKIE_NAMES.LAST_VISIT)
   const user = useLocalStorage<User | null>('user', null, {
     serializer: StorageSerializers.object,
   })
@@ -15,6 +16,7 @@ export const useUserStore = defineStore('user', () => {
   const clearSession = () => {
     user.value = null
     token.value = null
+    // lastVisit.value = null
   }
 
   return { user: skipHydrate(user), userDetail, isLoggedIn, clearSession }
