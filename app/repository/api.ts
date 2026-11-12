@@ -6,6 +6,7 @@ import { paymentApi } from './modules/payment'
 import { miscApi } from './modules/misc'
 import { ReferralApi } from './modules/referral'
 import { AlertApi } from './modules/alert'
+import { HistoryApi } from './modules/history'
 
 const http = new HttpClient()
 
@@ -17,4 +18,5 @@ export const apiClient = {
   misc: miscApi(http),
   referral: ReferralApi(http),
   alert: AlertApi(http),
+  history: HistoryApi(http),
 }

@@ -34,6 +34,11 @@ export const apiRoutes = {
     alerts: '/alert',
     edit: '/alert',
   },
+  history: {
+    payments: '/epayment-history',
+    recharges: '/recharge-history',
+    transactions: '/transaction-history',
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes

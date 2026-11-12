@@ -129,6 +129,25 @@
   clip-path: inset(100% 0 0 0);
 }
 
+.slide-tab-enter-active {
+  transition:
+    opacity 0.25s ease-out,
+    transform 0.25s ease-out;
+}
+.slide-tab-leave-active {
+  transition:
+    opacity 0.15s ease-in,
+    transform 0.15s ease-in;
+}
+.slide-tab-enter-from {
+  opacity: 0;
+  transform: translateX(1.5rem);
+}
+.slide-tab-leave-to {
+  opacity: 0;
+  transform: translateX(-1.5rem);
+}
+
 /* Stop the page behind an open UiModal from scrolling. */
 html:has(dialog[data-ui-modal][open]) {
   overflow: hidden;

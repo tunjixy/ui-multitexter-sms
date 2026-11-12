@@ -137,9 +137,9 @@ const menus = ref<Menu[]>([
     showMenu: false,
     subMenus: [
       {
-        title: 'Recharge History',
+        title: 'History',
         icon: markRaw(History),
-        url: '/dashboard/recharge-history',
+        url: '/dashboard/history',
       },
       {
         title: 'Alert',
