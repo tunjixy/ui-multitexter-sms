@@ -1,6 +1,6 @@
 <template>
   <header
-    class="border-border bg-background/80 sticky top-0 z-40 h-16 w-full border-b backdrop-blur-lg backdrop-saturate-180"
+    class="border-border bg-background/50 sticky top-0 z-40 h-16 w-full border-b backdrop-blur-lg backdrop-saturate-180"
   >
     <div class="dashboard-wrapper">
       <div class="flex h-16 w-full items-center justify-between gap-3">
@@ -18,11 +18,12 @@
           </div>
         </div>
         <div class="flex items-center">
-          <div v-if="userDetail" class="flex items-center gap-2">
+          <div class="flex items-center gap-2">
             <CoinsIcon class="text-primary size-4" />
-            <span class="text-sm font-bold">
+            <span v-if="userDetail" class="text-sm font-bold">
               {{ formatNumberWithComma(userDetail.balance) }}
             </span>
+            <UiSkeleton v-else class="h-4 w-16 rounded" />
           </div>
         </div>
       </div>

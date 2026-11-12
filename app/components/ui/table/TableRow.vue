@@ -1,6 +1,6 @@
 <template>
   <tr
-    class="border-border hover:bg-grey-2 dark:hover:bg-grey/10 border-b text-sm"
+    class="border-border hover:bg-foreground/3 border-b text-sm transition-colors"
   >
     <slot />
   </tr>

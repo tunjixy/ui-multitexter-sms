@@ -26,6 +26,10 @@ export const apiRoutes = {
     unsubscribe: '/unsubscribe',
     senderNameRequest: '/sender-name-request',
   },
+  referral: {
+    referrals: '/referral',
+    commissions: '/commission',
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes

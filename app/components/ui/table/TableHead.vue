@@ -1,6 +1,6 @@
 <template>
   <th
-    class="border-border bg-table-header text-muted-foreground border-r-0 border-b border-l-0 px-4 py-4 text-left align-middle text-sm font-normal whitespace-nowrap uppercase"
+    class="border-border bg-grey/50 dark:bg-grey/10 border-r-0 border-b border-l-0 px-4 py-3.5 text-left align-middle text-xs font-medium tracking-wide whitespace-nowrap uppercase"
   >
     <slot />
   </th>
