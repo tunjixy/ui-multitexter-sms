@@ -30,6 +30,10 @@ export const apiRoutes = {
     referrals: '/referral',
     commissions: '/commission',
   },
+  alert: {
+    alerts: '/alert',
+    edit: '/alert',
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes
