@@ -154,7 +154,7 @@ const menus = ref<Menu[]>([
       {
         title: 'Pricing',
         icon: markRaw(Tag),
-        url: '/dashboard/pricing',
+        url: '/pricing',
       },
       {
         title: 'Birthdays',
