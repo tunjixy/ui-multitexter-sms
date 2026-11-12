@@ -13,7 +13,7 @@
           >
             <MenuIcon :size="18" />
           </button>
-          <div class="font-semibold">
+          <div class="text-lg font-semibold">
             {{ pageTitle }}
           </div>
         </div>

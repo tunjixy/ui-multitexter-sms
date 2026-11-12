@@ -52,6 +52,24 @@
     .divider {
       @apply border-border border-b;
     }
+    .mx-datepicker-main,
+    .mx-date-time,
+    .mx-time {
+      background-color: var(--color-surface) !important;
+      color: var(--color-white) !important;
+      border: solid 1px rgb(231, 231, 231, 0.1) !important;
+    }
+    .mx-calendar-header {
+      color: var(--color-white) !important;
+    }
+    .mx-calendar-header .mx-calendar-header-label button {
+      color: var(--color-white) !important;
+    }
+    .mx-icon-calendar,
+    .mx-icon-clear,
+    i {
+      color: var(--color-white) !important;
+    }
   }
 }
 
@@ -67,6 +85,53 @@
   .wrapper {
     @apply mx-auto max-w-7xl;
   }
+}
+
+/* vue-date-picker-next styling override */
+.mx-datepicker {
+  width: 100% !important;
+  display: block !important;
+}
+.mx-calendar-header {
+  color: var(--color-foreground) !important;
+}
+.mx-calendar-header .mx-calendar-header-label button {
+  color: var(--color-foreground) !important;
+}
+.mx-calendar-header .mx-calendar-header-label button:hover {
+  color: var(--color-primary) !important;
+}
+.mx-datepicker-main,
+.mx-date-time,
+.mx-time {
+  border-radius: var(--radius-md) !important;
+  border: solid 1px var(--color-grey);
+  box-shadow: var(--shadow) !important;
+  color: var(--color-foreground) !important;
+}
+.mx-icon-calendar,
+.mx-icon-clear,
+i {
+  color: var(--color-foreground) !important;
+}
+.mx-calendar-content .cell.active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+}
+.mx-table-date .today {
+  color: var(--color-primary) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+.mx-calendar-content .cell:hover {
+  background-color: var(--color-sky-950) !important;
+  color: var(--color-sky-300) !important;
+}
+.mx-time-content .mx-time-item:hover {
+  background-color: var(--color-sky-950) !important;
+  color: var(--color-sky-300) !important;
+}
+.mx-time-content .mx-time-item.active {
+  color: var(--color-primary) !important;
 }
 
 /* Active route styling */

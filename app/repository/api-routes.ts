@@ -39,6 +39,15 @@ export const apiRoutes = {
     recharges: '/recharge-history',
     transactions: '/transaction-history',
   },
+  birthday: {
+    lists: (page: number) => `/birthday/list?page=${page}`,
+    create: '/birthday/create',
+    edit: (id: number) => `/birthday/update/${id}`,
+    start: (id: number) => `/birthday/start/${id}`,
+    stop: (id: number) => `/birthday/stop/${id}`,
+    upload: '/birthday-upload',
+    delete: (id: number) => `/birthday/delete/${id}`,
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes

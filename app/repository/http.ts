@@ -40,7 +40,9 @@ export class HttpClient {
       baseURL: this.getBaseURL(),
       headers: Object.fromEntries(
         Object.entries({
-          'Content-Type': 'application/json',
+          // FormData bodies need the browser to set the multipart boundary.
+          'Content-Type':
+            options.body instanceof FormData ? undefined : 'application/json',
           ...options.headers,
         }).filter(([_, value]) => value !== undefined),
       ) as Record<string, string>,

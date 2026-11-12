@@ -7,6 +7,7 @@ import { miscApi } from './modules/misc'
 import { ReferralApi } from './modules/referral'
 import { AlertApi } from './modules/alert'
 import { HistoryApi } from './modules/history'
+import { BirthdayApi } from './modules/birthday'
 
 const http = new HttpClient()
 
@@ -19,4 +20,5 @@ export const apiClient = {
   referral: ReferralApi(http),
   alert: AlertApi(http),
   history: HistoryApi(http),
+  birthday: BirthdayApi(http),
 }
