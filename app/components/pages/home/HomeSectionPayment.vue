@@ -8,13 +8,17 @@
         class="order-last grid grid-cols-2 gap-3 sm:grid-cols-3 lg:order-first"
       >
         <li
-          v-for="method in methods"
+          v-for="(method, index) in methods"
           :key="method"
+          v-motion-pop-visible-once
+          :delay="index * 75"
           class="bg-surface border-border flex h-15 items-center rounded-lg border px-5 text-sm font-medium"
         >
           {{ method }}
         </li>
         <li
+          v-motion-fade-visible-once
+          :delay="methods.length * 75"
           class="bg-dark-blue col-span-full flex min-h-15 items-center rounded-lg border border-white/10 px-5 py-4 text-sm text-white"
         >
           First Bank, Diamond Bank, GTBank and Zenith Bank
@@ -23,16 +27,21 @@
 
       <div>
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Payments
         </p>
         <h2
+          v-motion-reveal
+          :delay="100"
           class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Multiple and flexible payment options
         </h2>
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-5 max-w-xl text-base leading-relaxed"
         >
           With either Bank Deposits or Online Transfer, payment is easily
@@ -41,12 +50,14 @@
           and for Bank Deposits, First Bank, Diamond Bank, GTBank and Zenith
           Bank.
         </p>
-        <NuxtLink
-          to="/pricing"
-          class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 mt-8 inline-flex h-12 items-center rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
-        >
-          View Pricing
-        </NuxtLink>
+        <div v-motion-fade-visible-once :delay="450" class="mt-8">
+          <NuxtLink
+            to="/pricing"
+            class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 inline-flex h-12 items-center rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
+          >
+            View Pricing
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </section>

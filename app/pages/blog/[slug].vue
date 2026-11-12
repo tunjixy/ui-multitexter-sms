@@ -26,6 +26,7 @@
           </NuxtLink>
 
           <p
+            v-motion-fade-visible-once
             class="text-muted-foreground mt-10 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"
           >
             <template v-if="date">
@@ -36,12 +37,19 @@
           </p>
 
           <h1
+            v-motion-reveal
+            :delay="100"
             class="mt-4 text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl"
           >
             {{ post.title }}
           </h1>
 
-          <div v-if="post.author_name" class="mt-8 flex items-center gap-3">
+          <div
+            v-if="post.author_name"
+            v-motion-fade-visible-once
+            :delay="300"
+            class="mt-8 flex items-center gap-3"
+          >
             <span
               aria-hidden="true"
               class="bg-primary/10 text-primary border-primary/20 flex size-10 items-center justify-center rounded-full border text-sm font-semibold"
@@ -60,6 +68,8 @@
     <div class="wrapper pb-16 lg:pb-24">
       <div
         v-if="post.featured_image_url"
+        v-motion-slide-visible-once-bottom
+        :delay="300"
         class="relative mx-auto -mt-20 max-w-5xl lg:-mt-32"
       >
         <NuxtImg
@@ -69,7 +79,11 @@
         />
       </div>
 
-      <div class="mx-auto mt-12 max-w-3xl lg:mt-16">
+      <div
+        v-motion-fade-visible-once
+        :delay="400"
+        class="mx-auto mt-12 max-w-3xl lg:mt-16"
+      >
         <!-- eslint-disable vue/no-v-html -->
         <div
           class="post-content prose prose-neutral dark:prose-invert sm:prose-lg prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:wrap-break-word prose-a:hover:underline prose-strong:text-foreground prose-img:rounded-2xl prose-img:border prose-img:border-border prose-pre:bg-dark-blue prose-pre:rounded-2xl prose-pre:border prose-pre:border-white/10 prose-blockquote:border-l-primary prose-hr:border-border max-w-none"

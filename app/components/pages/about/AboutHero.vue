@@ -14,12 +14,15 @@
     >
       <div>
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Our Story &amp; Purpose
         </p>
 
         <h1
+          v-motion-reveal
+          :delay="100"
           class="mt-4 text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
         >
           Engineered for messages that
@@ -27,6 +30,8 @@
         </h1>
 
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
         >
           Multitexter is an online Bulk SMS platform for sending text messages
@@ -35,7 +40,11 @@
           most of the major GSM networks internationally.
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div
+          v-motion-fade-visible-once
+          :delay="450"
+          class="mt-8 flex flex-wrap gap-3"
+        >
           <NuxtLink
             to="/signup"
             class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 flex h-11 items-center rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
@@ -53,8 +62,10 @@
 
       <ul class="grid gap-4 sm:grid-cols-2">
         <li
-          v-for="stat in stats"
+          v-for="(stat, index) in stats"
           :key="stat.label"
+          v-motion-slide-visible-once-bottom
+          :delay="200 + index * 100"
           class="border-border bg-surface rounded-2xl border p-6"
         >
           <p class="text-3xl font-bold tracking-tight lg:text-4xl">

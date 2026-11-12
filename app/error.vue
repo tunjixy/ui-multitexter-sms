@@ -14,32 +14,44 @@
         class="wrapper flex min-h-[70vh] flex-col items-center justify-center py-24 text-center"
       >
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Error {{ status }}
         </p>
         <p
+          v-motion-pop-visible-once
+          :delay="100"
           aria-hidden="true"
           class="from-foreground to-foreground/10 mt-4 bg-linear-to-b bg-clip-text text-[clamp(6rem,22vw,11rem)] leading-none font-semibold tracking-tighter text-transparent tabular-nums"
         >
           {{ status }}
         </p>
         <h1
+          v-motion-reveal
+          :delay="200"
           class="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl"
         >
           {{ title }}
         </h1>
-        <p class="text-muted-foreground mt-4 max-w-md leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="400"
+          class="text-muted-foreground mt-4 max-w-md leading-relaxed"
+        >
           {{ description }}
         </p>
 
         <pre
           v-if="isDev && error.message"
           class="border-border bg-surface text-muted-foreground mt-6 max-w-xl overflow-x-auto rounded-xl border px-4 py-3 text-left text-xs whitespace-pre-wrap"
-          >{{ error.message }}</pre
-        >
+          >{{ error.message }}</pre>
 
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <div
+          v-motion-fade-visible-once
+          :delay="550"
+          class="mt-8 flex flex-wrap justify-center gap-3"
+        >
           <button
             type="button"
             class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 flex h-11 cursor-pointer items-center gap-2 rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"

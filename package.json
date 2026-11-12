@@ -20,6 +20,7 @@
     "@tailwindcss/vite": "^4.3.5",
     "@unhead/vue": "^3.4.3",
     "@vue/devtools-api": "^8.2.1",
+    "@vueuse/motion": "^3.0.3",
     "nuxt": "^4.6.4",
     "nuxt-schema-org": "^7.0.1",
     "pinia": "^4.1.0",

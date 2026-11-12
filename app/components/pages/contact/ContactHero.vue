@@ -10,24 +10,35 @@
     />
 
     <div class="wrapper relative">
-      <p class="text-primary text-xs font-semibold tracking-[0.25em] uppercase">
+      <p
+        v-motion-fade-visible-once
+        class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
+      >
         Get in touch with our team
       </p>
 
       <h1
+        v-motion-reveal
+        :delay="100"
         class="mt-4 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
       >
         How can we help your business connect?
       </h1>
 
       <p
+        v-motion-fade-visible-once
+        :delay="300"
         class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
       >
         Whether you need custom volume rates for bulk SMS, direct developer
         support for REST APIs, or account onboarding, our team is ready.
       </p>
 
-      <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+      <ul
+        v-motion-fade-visible-once
+        :delay="450"
+        class="mt-8 flex flex-wrap gap-x-6 gap-y-3"
+      >
         <li
           v-for="highlight in highlights"
           :key="highlight"

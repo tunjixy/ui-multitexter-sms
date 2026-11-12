@@ -6,27 +6,37 @@
       >
         <div>
           <p
+            v-motion-fade-visible-once
             class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
           >
             Destinations
           </p>
-          <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2
+            v-motion-reveal
+            :delay="100"
+            class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl"
+          >
             Find your destination
           </h2>
         </div>
 
-        <UiInput
+        <div
           v-if="coverages.length"
-          v-model="query"
-          type="search"
-          placeholder="Search countries…"
-          aria-label="Search countries"
+          v-motion-fade-visible-once
+          :delay="300"
           class="sm:w-72"
         >
-          <template #leading>
-            <Search class="size-4" />
-          </template>
-        </UiInput>
+          <UiInput
+            v-model="query"
+            type="search"
+            placeholder="Search countries…"
+            aria-label="Search countries"
+          >
+            <template #leading>
+              <Search class="size-4" />
+            </template>
+          </UiInput>
+        </div>
       </div>
 
       <EmptyState
@@ -37,7 +47,7 @@
         class="mt-8"
       />
 
-      <template v-else>
+      <div v-else v-motion-slide-visible-once-bottom :delay="400">
         <p class="text-muted-foreground mt-8 text-sm" aria-live="polite">
           {{ summary }}
         </p>
@@ -83,7 +93,7 @@
             </div>
           </li>
         </ul>
-      </template>
+      </div>
     </div>
   </section>
 </template>

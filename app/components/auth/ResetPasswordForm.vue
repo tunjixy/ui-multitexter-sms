@@ -4,7 +4,7 @@
     <p class="text-muted-foreground mt-1">
       Choose a new password for your account
     </p>
-    <div class="border-border bg-surface mt-6 rounded-lg border p-6">
+    <div class="border-border bg-surface mt-6 rounded-lg border px-8 py-6">
       <div
         v-if="linkState === 'checking'"
         role="status"

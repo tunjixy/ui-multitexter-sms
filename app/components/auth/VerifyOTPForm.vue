@@ -4,7 +4,7 @@
     <p class="text-muted-foreground mt-1">
       We sent a 6-digit code to your email
     </p>
-    <div class="border-border bg-surface mt-6 rounded-lg border p-6">
+    <div class="border-border bg-surface mt-6 rounded-lg border px-8 py-6">
       <form @submit.prevent>
         <UiOtpInput
           v-model="code"

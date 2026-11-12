@@ -3,7 +3,12 @@
     class="wrapper grid gap-12 py-16 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-20 lg:py-24"
   >
     <aside class="hidden lg:block">
-      <nav aria-label="On this page" class="sticky top-32">
+      <nav
+        v-motion-fade-visible-once
+        :delay="300"
+        aria-label="On this page"
+        class="sticky top-32"
+      >
         <p
           class="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase"
         >
@@ -35,13 +40,26 @@
     <div class="divide-border max-w-3xl divide-y">
       <section id="overview" class="scroll-mt-24 pb-12">
         <div class="flex items-baseline gap-4">
-          <span class="text-primary text-sm font-semibold tabular-nums">
+          <span
+            v-motion-fade-visible-once
+            class="text-primary text-sm font-semibold tabular-nums"
+          >
             01
           </span>
-          <h2 class="text-2xl font-semibold tracking-tight">Overview</h2>
+          <h2
+            v-motion-reveal
+            :delay="100"
+            class="text-2xl font-semibold tracking-tight"
+          >
+            Overview
+          </h2>
         </div>
 
-        <p class="text-muted-foreground mt-6 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="250"
+          class="text-muted-foreground mt-6 leading-relaxed"
+        >
           <strong class="text-foreground font-semibold">Multitexter</strong>
           is committed to protecting the privacy and security of our customers
           and will like to certify that our users are fully informed about the
@@ -51,6 +69,8 @@
         </p>
 
         <div
+          v-motion-slide-visible-once-bottom
+          :delay="150"
           class="border-primary/25 bg-primary/5 mt-8 flex gap-4 rounded-2xl border p-6"
         >
           <ShieldCheck class="text-primary mt-0.5 size-5 shrink-0" />
@@ -60,7 +80,11 @@
           </p>
         </div>
 
-        <p class="text-muted-foreground mt-8 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="150"
+          class="text-muted-foreground mt-8 leading-relaxed"
+        >
           <strong class="text-foreground font-semibold">Multitexter</strong>
           may use certain non-affiliated third parties as service providers, and
           may share nonpublic personal information with them in order to fulfil
@@ -73,15 +97,26 @@
 
       <section id="use-of-data" class="scroll-mt-24 py-12">
         <div class="flex items-baseline gap-4">
-          <span class="text-primary text-sm font-semibold tabular-nums">
+          <span
+            v-motion-fade-visible-once
+            class="text-primary text-sm font-semibold tabular-nums"
+          >
             02
           </span>
-          <h2 class="text-2xl font-semibold tracking-tight">
+          <h2
+            v-motion-reveal
+            :delay="100"
+            class="text-2xl font-semibold tracking-tight"
+          >
             Use of Data Collected
           </h2>
         </div>
 
-        <p class="text-muted-foreground mt-6 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="250"
+          class="text-muted-foreground mt-6 leading-relaxed"
+        >
           We use your personal, demographic and profile data to enhance your
           experience at our site and to enable us to present content in which we
           think you may be interested. We use your contact information to send
@@ -98,21 +133,32 @@
 
       <section id="disclosure" class="scroll-mt-24 py-12">
         <div class="flex items-baseline gap-4">
-          <span class="text-primary text-sm font-semibold tabular-nums">
+          <span
+            v-motion-fade-visible-once
+            class="text-primary text-sm font-semibold tabular-nums"
+          >
             03
           </span>
-          <h2 class="text-2xl font-semibold tracking-tight">
+          <h2
+            v-motion-reveal
+            :delay="100"
+            class="text-2xl font-semibold tracking-tight"
+          >
             Disclosure of Data to Third Parties
           </h2>
         </div>
 
-        <p class="text-muted-foreground mt-6 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="250"
+          class="text-muted-foreground mt-6 leading-relaxed"
+        >
           We may disclose data we collect to third parties as described below.
           If you choose to provide personal information, it may be used for the
           following purposes:
         </p>
 
-        <ol class="mt-6 space-y-4">
+        <ol v-motion-fade-visible-once :delay="350" class="mt-6 space-y-4">
           <li
             v-for="(purpose, index) in disclosurePurposes"
             :key="index"
@@ -132,15 +178,26 @@
 
       <section id="changes" class="scroll-mt-24 py-12">
         <div class="flex items-baseline gap-4">
-          <span class="text-primary text-sm font-semibold tabular-nums">
+          <span
+            v-motion-fade-visible-once
+            class="text-primary text-sm font-semibold tabular-nums"
+          >
             04
           </span>
-          <h2 class="text-2xl font-semibold tracking-tight">
+          <h2
+            v-motion-reveal
+            :delay="100"
+            class="text-2xl font-semibold tracking-tight"
+          >
             Changes to this Privacy Policy
           </h2>
         </div>
 
-        <p class="text-muted-foreground mt-6 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="250"
+          class="text-muted-foreground mt-6 leading-relaxed"
+        >
           We reserve the right to revise and update this Privacy Policy at any
           time by posting the changes online at our site, and will apply to all
           information collected by
@@ -158,6 +215,7 @@
 
       <div class="pt-12">
         <div
+          v-motion-slide-visible-once-bottom
           class="bg-surface border-border relative overflow-hidden rounded-3xl border p-8 sm:p-10"
         >
           <div
@@ -168,10 +226,18 @@
             class="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
           >
             <div class="max-w-md">
-              <h2 class="text-2xl font-semibold tracking-tight">
+              <h2
+                v-motion-reveal
+                :delay="100"
+                class="text-2xl font-semibold tracking-tight"
+              >
                 Read our Terms of Service
               </h2>
-              <p class="text-muted-foreground mt-3 leading-relaxed">
+              <p
+                v-motion-fade-visible-once
+                :delay="300"
+                class="text-muted-foreground mt-3 leading-relaxed"
+              >
                 The rules for using Multitexter and its services.
               </p>
             </div>

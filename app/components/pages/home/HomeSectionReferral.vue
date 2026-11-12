@@ -2,6 +2,7 @@
   <section class="py-16 lg:py-24">
     <div class="wrapper">
       <div
+        v-motion-slide-visible-once-bottom
         class="bg-dark-blue relative overflow-hidden rounded-xl border border-white/10 text-white"
       >
         <div
@@ -16,16 +17,24 @@
         <div class="relative grid lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           <div class="p-8 sm:p-12 lg:p-16">
             <p
+              v-motion-fade-visible-once
+              :delay="150"
               class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
             >
               Referral Programme
             </p>
             <h2
+              v-motion-reveal
+              :delay="250"
               class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
             >
               Refer MultiTexter &amp; make money
             </h2>
-            <p class="mt-6 max-w-xl text-base leading-relaxed text-white/75">
+            <p
+              v-motion-fade-visible-once
+              :delay="450"
+              class="mt-6 max-w-xl text-base leading-relaxed text-white/75"
+            >
               After signing up for bulk SMS, a unique referral link is generated
               for you. Go to Profile Summary after logging in to retrieve your
               referral. Send your referral link to someone to register, and when
@@ -33,7 +42,11 @@
               units by transferring the units and get cash from them.
             </p>
 
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div
+              v-motion-fade-visible-once
+              :delay="550"
+              class="mt-8 flex flex-wrap gap-3"
+            >
               <NuxtLink
                 to="/signup"
                 class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 inline-flex h-12 items-center rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
@@ -64,7 +77,13 @@
             </p>
 
             <ol class="mt-6 space-y-3 text-sm text-white/80">
-              <li v-for="(step, index) in steps" :key="step" class="flex gap-3">
+              <li
+                v-for="(step, index) in steps"
+                :key="step"
+                v-motion-slide-visible-once-right
+                :delay="400 + index * 100"
+                class="flex gap-3"
+              >
                 <span class="text-primary font-semibold tabular-nums">
                   {{ String(index + 1).padStart(2, '0') }}
                 </span>

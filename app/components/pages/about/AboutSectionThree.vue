@@ -3,18 +3,23 @@
     <div class="wrapper grid items-center gap-12 lg:grid-cols-2 xl:gap-16">
       <div>
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Sector Solutions
         </p>
 
         <h2
+          v-motion-reveal
+          :delay="100"
           class="text-foreground mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Tailored for every sector in modern Nigeria.
         </h2>
 
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-5 max-w-xl text-base leading-relaxed sm:text-lg"
         >
           Whether communicating order updates for quick-service restaurants or
@@ -26,6 +31,8 @@
           <li
             v-for="(sector, index) in sectors"
             :key="sector.title"
+            v-motion-slide-visible-once-bottom
+            :delay="index * 100"
             class="bg-surface border-border hover:border-primary/40 flex gap-4 rounded-xl border p-5 transition-colors ease-in"
           >
             <span
@@ -47,6 +54,8 @@
       </div>
 
       <div
+        v-motion-slide-visible-once-bottom
+        :delay="200"
         class="bg-surface border-border relative overflow-hidden rounded-3xl border p-7 sm:p-10"
       >
         <span

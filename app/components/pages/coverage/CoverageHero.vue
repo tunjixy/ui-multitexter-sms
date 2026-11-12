@@ -25,23 +25,39 @@
     </div>
 
     <div class="wrapper relative py-16 lg:py-24">
-      <p class="text-primary text-xs font-semibold tracking-[0.25em] uppercase">
+      <p
+        v-motion-fade-visible-once
+        class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
+      >
         SMS Coverage
       </p>
       <h1
+        v-motion-reveal
+        :delay="100"
         class="mt-4 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
       >
         We cover where you need to reach.
       </h1>
       <p
+        v-motion-fade-visible-once
+        :delay="300"
         class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
       >
         Send messages to mobile networks across Nigeria and around the world.
         Find your destination below to see how many networks we reach there.
       </p>
 
-      <dl v-if="coverages.length" class="mt-10 flex flex-wrap gap-x-12 gap-y-6">
-        <div v-for="stat in stats" :key="stat.label" class="flex flex-col-reverse">
+      <dl
+        v-if="coverages.length"
+        v-motion-fade-visible-once
+        :delay="450"
+        class="mt-10 flex flex-wrap gap-x-12 gap-y-6"
+      >
+        <div
+          v-for="stat in stats"
+          :key="stat.label"
+          class="flex flex-col-reverse"
+        >
           <dt class="text-muted-foreground mt-1 text-sm">{{ stat.label }}</dt>
           <dd class="text-3xl font-semibold tracking-tight tabular-nums">
             {{ stat.value }}

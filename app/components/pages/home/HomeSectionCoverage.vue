@@ -5,32 +5,41 @@
     >
       <div>
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Coverage
         </p>
         <h2
+          v-motion-reveal
+          :delay="100"
           class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Send Bulk SMS to any network in Nigeria at one unit per SMS
         </h2>
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-5 max-w-xl text-base leading-relaxed"
         >
           MultiTexter provides the smartest, fastest and most reliable means of
           sending text messages in Nigeria and across Africa; reaching thousands
           of people with just one click with instant delivery report.
         </p>
-        <NuxtLink
-          to="/sms-coverage"
-          class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 mt-8 inline-flex h-12 items-center gap-2 rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
-        >
-          View Our Coverage
-          <ArrowRight class="size-4" />
-        </NuxtLink>
+        <div v-motion-fade-visible-once :delay="450" class="mt-8">
+          <NuxtLink
+            to="/sms-coverage"
+            class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 inline-flex h-12 items-center gap-2 rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
+          >
+            View Our Coverage
+            <ArrowRight class="size-4" />
+          </NuxtLink>
+        </div>
       </div>
 
       <div
+        v-motion-slide-visible-once-bottom
+        :delay="200"
         class="bg-dark-blue relative aspect-4/3 overflow-hidden rounded-xl border border-white/10 shadow-2xl shadow-black/10"
       >
         <EarthCoverage class="absolute inset-0 size-full" />

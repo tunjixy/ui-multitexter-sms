@@ -2,7 +2,12 @@
   <section class="py-16 lg:py-24">
     <div class="wrapper">
       <ul class="grid gap-10 sm:grid-cols-3 sm:gap-8">
-        <li v-for="feature in features" :key="feature.title">
+        <li
+          v-for="(feature, index) in features"
+          :key="feature.title"
+          v-motion-slide-visible-once-bottom
+          :delay="index * 100"
+        >
           <span
             class="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-xl"
           >
@@ -20,21 +25,32 @@
       >
         <div class="lg:sticky lg:top-32">
           <p
+            v-motion-fade-visible-once
             class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
           >
             Sample code
           </p>
           <h2
+            v-motion-reveal
+            :delay="100"
             class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
           >
             Send your first SMS.
           </h2>
-          <p class="text-muted-foreground mt-5 leading-relaxed">
+          <p
+            v-motion-fade-visible-once
+            :delay="300"
+            class="text-muted-foreground mt-5 leading-relaxed"
+          >
             Pick your language, fill in your account details and send a POST
             request with these parameters.
           </p>
 
-          <dl class="divide-border border-border mt-8 divide-y border-y">
+          <dl
+            v-motion-fade-visible-once
+            :delay="450"
+            class="divide-border border-border mt-8 divide-y border-y"
+          >
             <div
               v-for="param in params"
               :key="param.name"
@@ -52,67 +68,73 @@
           </dl>
         </div>
 
-        <UiTabs
-          v-model="activeSample"
-          :items="samples"
-          variant="segmented"
-          aria-label="Sample code language"
-          class="min-w-0"
-        >
-          <template
-            v-for="sample in samples"
-            :key="sample.value"
-            #[sample.value]
+        <div v-motion-slide-visible-once-bottom :delay="200" class="min-w-0">
+          <UiTabs
+            v-model="activeSample"
+            :items="samples"
+            variant="segmented"
+            aria-label="Sample code language"
           >
-            <div
-              class="bg-dark-blue overflow-hidden rounded-2xl border border-white/10 text-white"
+            <template
+              v-for="sample in samples"
+              :key="sample.value"
+              #[sample.value]
             >
               <div
-                class="flex h-11 items-center justify-between gap-3 border-b border-white/10 px-4"
+                class="bg-dark-blue overflow-hidden rounded-2xl border border-white/10 text-white"
               >
-                <div class="flex items-center gap-3">
-                  <span aria-hidden="true" class="flex gap-1.5">
-                    <span
-                      v-for="dot in 3"
-                      :key="dot"
-                      class="size-2.5 rounded-full bg-white/15"
-                    />
-                  </span>
-                  <span class="font-mono text-xs text-white/50">
-                    {{ sample.file }}
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  class="focus-visible:ring-primary/40 flex h-7 cursor-pointer items-center gap-1.5 rounded-md px-2 text-xs font-medium text-white/60 transition-colors ease-in outline-none hover:bg-white/10 hover:text-white focus-visible:ring-2"
-                  @click="copy(sample.code)"
-                >
-                  <component :is="copied ? Check : Copy" class="size-3.5" />
-                  {{ copied ? 'Copied' : 'Copy' }}
-                </button>
-              </div>
-
-              <div class="overflow-x-auto py-4 font-mono text-[13px] leading-6">
                 <div
-                  v-for="(line, index) in sample.code.split('\n')"
-                  :key="index"
-                  class="flex w-max min-w-full"
+                  class="flex h-11 items-center justify-between gap-3 border-b border-white/10 px-4"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="w-12 shrink-0 pr-4 text-right text-white/25 tabular-nums select-none"
+                  <div class="flex items-center gap-3">
+                    <span aria-hidden="true" class="flex gap-1.5">
+                      <span
+                        v-for="dot in 3"
+                        :key="dot"
+                        class="size-2.5 rounded-full bg-white/15"
+                      />
+                    </span>
+                    <span class="font-mono text-xs text-white/50">
+                      {{ sample.file }}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="focus-visible:ring-primary/40 flex h-7 cursor-pointer items-center gap-1.5 rounded-md px-2 text-xs font-medium text-white/60 transition-colors ease-in outline-none hover:bg-white/10 hover:text-white focus-visible:ring-2"
+                    @click="copy(sample.code)"
                   >
-                    {{ index + 1 }}
-                  </span>
-                  <span class="pr-6 whitespace-pre text-white/85">{{ line }}</span>
+                    <component :is="copied ? Check : Copy" class="size-3.5" />
+                    {{ copied ? 'Copied' : 'Copy' }}
+                  </button>
+                </div>
+
+                <div
+                  class="overflow-x-auto py-4 font-mono text-[13px] leading-6"
+                >
+                  <div
+                    v-for="(line, index) in sample.code.split('\n')"
+                    :key="index"
+                    class="flex w-max min-w-full"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="w-12 shrink-0 pr-4 text-right text-white/25 tabular-nums select-none"
+                    >
+                      {{ index + 1 }}
+                    </span>
+                    <span class="pr-6 whitespace-pre text-white/85">{{
+                      line
+                    }}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </template>
-        </UiTabs>
+            </template>
+          </UiTabs>
+        </div>
       </div>
 
       <div
+        v-motion-slide-visible-once-bottom
         class="bg-surface border-border relative mt-20 overflow-hidden rounded-3xl border p-8 sm:p-10 lg:mt-28"
       >
         <div
@@ -123,15 +145,25 @@
           class="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
         >
           <div class="max-w-md">
-            <h2 class="text-2xl font-semibold tracking-tight">
+            <h2
+              v-motion-reveal
+              :delay="150"
+              class="text-2xl font-semibold tracking-tight"
+            >
               Need help integrating?
             </h2>
-            <p class="text-muted-foreground mt-3 leading-relaxed">
+            <p
+              v-motion-fade-visible-once
+              :delay="350"
+              class="text-muted-foreground mt-3 leading-relaxed"
+            >
               Contact our support team if you run into any problems during
               integration.
             </p>
           </div>
           <a
+            v-motion-fade-visible-once
+            :delay="450"
             href="mailto:developer@multitexter.com"
             class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
           >

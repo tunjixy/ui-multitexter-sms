@@ -6,17 +6,22 @@
       >
         <div class="max-w-3xl">
           <p
+            v-motion-fade-visible-once
             class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
           >
             Why Choose Us
           </p>
           <h2
+            v-motion-reveal
+            :delay="100"
             class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
           >
             Built for messages that have to arrive.
           </h2>
         </div>
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground max-w-md text-base leading-relaxed lg:pb-1"
         >
           Manage marketing campaigns and internal communications from one simple
@@ -26,6 +31,7 @@
 
       <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
         <li
+          v-motion-slide-visible-once-bottom
           class="bg-dark-blue relative overflow-hidden rounded-xl border border-white/10 text-white sm:col-span-2 lg:col-span-4"
         >
           <div
@@ -88,6 +94,8 @@
         <li
           v-for="(feature, index) in features"
           :key="feature.title"
+          v-motion-slide-visible-once-bottom
+          :delay="(index % 3) * 100"
           :class="[
             'bg-surface border-border rounded-xl border p-8',
             index >= features.length - 2 ? 'lg:col-span-3' : 'lg:col-span-2',

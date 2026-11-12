@@ -14,6 +14,7 @@
     >
       <div>
         <p
+          v-motion-fade-visible-once
           class="border-border bg-surface/60 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium backdrop-blur"
         >
           <span class="size-1.5 shrink-0 rounded-full bg-emerald-500" />
@@ -21,6 +22,8 @@
         </p>
 
         <h1
+          v-motion-reveal
+          :delay="100"
           class="mt-6 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
         >
           Send Bulk SMS.
@@ -28,6 +31,8 @@
         </h1>
 
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-6 max-w-xl text-base leading-relaxed sm:text-lg"
         >
           Reach thousands of people on any network in Nigeria with one click, at
@@ -35,6 +40,8 @@
         </p>
 
         <div
+          v-motion-fade-visible-once
+          :delay="450"
           class="border-border mt-10 flex flex-wrap gap-x-10 gap-y-6 border-t pt-8"
         >
           <div
@@ -53,6 +60,8 @@
       </div>
 
       <div
+        v-motion-slide-visible-once-right
+        :delay="250"
         class="bg-surface/20 border-border rounded-xl border p-5 shadow-xl shadow-black/5 sm:p-8"
       >
         <h2 class="text-lg font-semibold">Quick compose</h2>

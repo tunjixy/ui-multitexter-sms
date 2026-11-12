@@ -2,15 +2,24 @@
   <section class="py-16 lg:py-24">
     <div class="wrapper">
       <div class="text-center">
-        <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h2
+          v-motion-reveal
+          class="text-3xl font-semibold tracking-tight sm:text-4xl"
+        >
           Our Clients
         </h2>
-        <p class="text-muted-foreground mt-3 text-base">
+        <p
+          v-motion-fade-visible-once
+          :delay="200"
+          class="text-muted-foreground mt-3 text-base"
+        >
           Here are some of our clients that use us
         </p>
       </div>
 
       <div
+        v-motion-fade-visible-once
+        :delay="350"
         class="marquee mt-12 overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
       >
         <div class="marquee-track flex w-max">

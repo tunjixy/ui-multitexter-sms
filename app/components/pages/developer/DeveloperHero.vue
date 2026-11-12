@@ -14,16 +14,21 @@
     >
       <div>
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Developers
         </p>
         <h1
+          v-motion-reveal
+          :delay="100"
           class="mt-4 text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
         >
           The complete SMS API and documentation.
         </h1>
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
         >
           Integrate bulk SMS into your website or any application that can make
@@ -31,7 +36,11 @@
           your choice.
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div
+          v-motion-fade-visible-once
+          :delay="450"
+          class="mt-8 flex flex-wrap gap-3"
+        >
           <a
             href="/MultiTexter_HTTP_SMS_API%202.0.pdf"
             target="_blank"

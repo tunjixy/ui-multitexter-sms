@@ -10,15 +10,22 @@
     />
 
     <div class="wrapper relative py-16 lg:py-24">
-      <p class="text-primary text-xs font-semibold tracking-[0.25em] uppercase">
+      <p
+        v-motion-fade-visible-once
+        class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
+      >
         Contact Sales
       </p>
       <h1
+        v-motion-reveal
+        :delay="100"
         class="mt-4 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
       >
         Talk to our messaging experts.
       </h1>
       <p
+        v-motion-fade-visible-once
+        :delay="300"
         class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
       >
         We'll get back to you to discuss your business needs in more detail and
@@ -26,7 +33,11 @@
         started.
       </p>
 
-      <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+      <ul
+        v-motion-fade-visible-once
+        :delay="450"
+        class="mt-8 flex flex-wrap gap-x-6 gap-y-3"
+      >
         <li
           v-for="highlight in highlights"
           :key="highlight"

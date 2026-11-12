@@ -5,24 +5,33 @@
     >
       <div class="lg:sticky lg:top-32">
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           What we can help with
         </p>
         <h2
+          v-motion-reveal
+          :delay="100"
           class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Messaging built around your business.
         </h2>
-        <p class="text-muted-foreground mt-5 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="300"
+          class="text-muted-foreground mt-5 leading-relaxed"
+        >
           Tell us about your traffic and our sales team will recommend the right
           setup and pricing.
         </p>
 
         <ul class="mt-10 space-y-6">
           <li
-            v-for="solution in solutions"
+            v-for="(solution, index) in solutions"
             :key="solution.title"
+            v-motion-slide-visible-once-bottom
+            :delay="index * 100"
             class="flex gap-4"
           >
             <span
@@ -40,6 +49,8 @@
         </ul>
 
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="border-border text-muted-foreground mt-10 border-t pt-6 text-sm"
         >
           Prefer email? Reach our sales team at
@@ -52,13 +63,21 @@
         </p>
       </div>
 
-      <div class="bg-surface border-border rounded-3xl border p-6 sm:p-10">
+      <div
+        v-motion-slide-visible-once-bottom
+        :delay="200"
+        class="bg-surface border-border rounded-3xl border p-6 sm:p-10"
+      >
         <span
           class="bg-primary/10 text-primary border-primary/30 inline-block rounded-full border px-3 py-1 text-xs font-medium"
         >
           Sales Enquiry
         </span>
-        <h2 class="mt-4 text-2xl font-semibold tracking-tight">
+        <h2
+          v-motion-reveal
+          :delay="300"
+          class="mt-4 text-2xl font-semibold tracking-tight"
+        >
           Tell us about your business
         </h2>
         <p class="text-muted-foreground mt-2 text-sm">

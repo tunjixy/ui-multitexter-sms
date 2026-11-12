@@ -11,6 +11,7 @@
 
     <div class="wrapper flex flex-col items-center py-20 text-center lg:py-28">
       <div
+        v-motion-pop-visible-once
         aria-hidden="true"
         class="flex items-center gap-[0.08em] text-[clamp(6rem,22vw,11rem)] leading-none font-semibold tracking-tighter"
       >
@@ -34,16 +35,26 @@
       </div>
 
       <h1
+        v-motion-reveal
+        :delay="200"
         class="mt-8 text-3xl font-semibold tracking-tight text-balance sm:text-4xl"
       >
         This page couldn't be delivered.
       </h1>
-      <p class="text-muted-foreground mt-4 max-w-md leading-relaxed">
+      <p
+        v-motion-fade-visible-once
+        :delay="400"
+        class="text-muted-foreground mt-4 max-w-md leading-relaxed"
+      >
         The page you're looking for doesn't exist or may have been moved. Check
         the address, or head somewhere useful below.
       </p>
 
-      <p class="mt-6 inline-flex max-w-full items-center gap-2 text-xs">
+      <p
+        v-motion-fade-visible-once
+        :delay="500"
+        class="mt-6 inline-flex max-w-full items-center gap-2 text-xs"
+      >
         <span
           class="flex shrink-0 items-center gap-1.5 font-semibold text-red-600 dark:text-red-400"
         >
@@ -54,7 +65,11 @@
         <code class="text-muted-foreground truncate">{{ route.path }}</code>
       </p>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <div
+        v-motion-fade-visible-once
+        :delay="600"
+        class="mt-8 flex flex-wrap justify-center gap-3"
+      >
         <NuxtLink
           to="/"
           class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 flex h-11 items-center gap-2 rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"

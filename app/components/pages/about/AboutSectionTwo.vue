@@ -3,18 +3,23 @@
     <div class="wrapper">
       <div class="max-w-3xl">
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Dependability at Scale
         </p>
 
         <h2
+          v-motion-reveal
+          :delay="100"
           class="text-foreground mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Why Nigerian organizations trust our message routing.
         </h2>
 
         <p
+          v-motion-fade-visible-once
+          :delay="300"
           class="text-muted-foreground mt-5 max-w-2xl text-base leading-relaxed sm:text-lg"
         >
           SMS remains the most direct medium in West Africa. We designed
@@ -25,8 +30,10 @@
 
       <ul class="mt-12 grid gap-6 md:grid-cols-2 lg:mt-14 lg:grid-cols-3">
         <li
-          v-for="feature in features"
+          v-for="(feature, index) in features"
           :key="feature.title"
+          v-motion-slide-visible-once-bottom
+          :delay="index * 100"
           class="bg-surface border-border hover:border-primary/40 flex flex-col rounded-2xl border p-7 transition-colors ease-in"
         >
           <span

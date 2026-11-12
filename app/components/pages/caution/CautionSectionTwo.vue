@@ -8,29 +8,40 @@
       >
         <div class="lg:sticky lg:top-32">
           <span
+            v-motion-pop-visible-once
             class="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-xl"
           >
             <component :is="group.icon" class="size-5" />
           </span>
           <p
+            v-motion-fade-visible-once
+            :delay="100"
             class="text-primary mt-6 text-xs font-semibold tracking-[0.25em] uppercase"
           >
             {{ group.eyebrow }}
           </p>
           <h2
+            v-motion-reveal
+            :delay="200"
             class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
           >
             {{ group.title }}
           </h2>
-          <p class="text-muted-foreground mt-5 leading-relaxed">
+          <p
+            v-motion-fade-visible-once
+            :delay="400"
+            class="text-muted-foreground mt-5 leading-relaxed"
+          >
             {{ group.description }}
           </p>
         </div>
 
         <ol class="space-y-4">
           <li
-            v-for="rule in group.rules"
+            v-for="(rule, index) in group.rules"
             :key="rule.number"
+            v-motion-slide-visible-once-bottom
+            :delay="index * 100"
             class="bg-surface border-border rounded-3xl border p-6 sm:p-8"
           >
             <div class="flex items-start gap-4">
@@ -50,7 +61,9 @@
             </div>
 
             <div class="mt-6 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-2xl border border-red-500/20 bg-red-500/5 p-4">
+              <div
+                class="rounded-2xl border border-red-500/20 bg-red-500/5 p-4"
+              >
                 <p
                   class="flex items-center gap-1.5 text-xs font-semibold text-red-600 dark:text-red-400"
                 >
@@ -108,6 +121,7 @@
       </div>
 
       <div
+        v-motion-slide-visible-once-bottom
         class="bg-surface border-border relative overflow-hidden rounded-3xl border p-8 sm:p-10"
       >
         <div
@@ -121,10 +135,18 @@
             <FlaskConical class="size-5" />
           </span>
           <div class="max-w-3xl">
-            <h2 class="text-xl font-semibold tracking-tight">
+            <h2
+              v-motion-reveal
+              :delay="150"
+              class="text-xl font-semibold tracking-tight"
+            >
               Run a few tests before you send
             </h2>
-            <p class="text-muted-foreground mt-3 leading-relaxed">
+            <p
+              v-motion-fade-visible-once
+              :delay="350"
+              class="text-muted-foreground mt-3 leading-relaxed"
+            >
               These guidelines are based on non-delivery cases we've seen in the
               past and may change. Network providers don't publish a full list
               of words or phrases for bulk SMS routes, so we advise sending a
@@ -138,13 +160,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Check,
-  FlaskConical,
-  IdCard,
-  MessageSquareText,
-  X,
-} from '@lucide/vue'
+import { Check, FlaskConical, IdCard, MessageSquareText, X } from '@lucide/vue'
 import type { Component } from 'vue'
 
 interface Rule {

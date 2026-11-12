@@ -10,15 +10,22 @@
     />
 
     <div class="wrapper relative py-16 lg:py-24">
-      <p class="text-primary text-xs font-semibold tracking-[0.25em] uppercase">
+      <p
+        v-motion-fade-visible-once
+        class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
+      >
         Blog
       </p>
       <h1
+        v-motion-reveal
+        :delay="100"
         class="mt-4 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
       >
         Tips and guides for smarter SMS.
       </h1>
       <p
+        v-motion-fade-visible-once
+        :delay="300"
         class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
       >
         How-tos, ideas and updates to help your business reach more people with

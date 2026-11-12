@@ -2,7 +2,7 @@
   <div class="mx-auto w-full py-4 sm:py-0 md:max-w-lg">
     <p class="text-2xl font-bold md:text-3xl">Welcome to Multitexter</p>
     <p class="text-muted-foreground mt-1">Let's get you signed up</p>
-    <div class="border-border bg-surface mt-6 rounded-lg border p-6">
+    <div class="border-border bg-surface mt-6 rounded-lg border px-8 py-6">
       <form @submit="onSubmit">
         <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
           <UiInput

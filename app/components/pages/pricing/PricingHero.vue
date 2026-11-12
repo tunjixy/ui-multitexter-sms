@@ -10,15 +10,22 @@
     />
 
     <div class="wrapper relative py-16 lg:py-24">
-      <p class="text-primary text-xs font-semibold tracking-[0.25em] uppercase">
+      <p
+        v-motion-fade-visible-once
+        class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
+      >
         Pricing
       </p>
       <h1
+        v-motion-reveal
+        :delay="100"
         class="mt-4 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
       >
         The more you send, the less you pay.
       </h1>
       <p
+        v-motion-fade-visible-once
+        :delay="300"
         class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
       >
         Our pricing is simple: buy units as you need them, and the more you buy,
@@ -26,7 +33,11 @@
         can purchase at any time.
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-3">
+      <div
+        v-motion-fade-visible-once
+        :delay="450"
+        class="mt-8 flex flex-wrap gap-3"
+      >
         <a
           href="#calculator"
           class="bg-primary text-dark-blue hover:bg-primary/85 focus-visible:ring-primary/40 flex h-11 items-center gap-2 rounded-lg px-6 text-sm font-semibold transition-colors ease-in outline-none focus-visible:ring-3"
@@ -45,6 +56,8 @@
 
       <dl
         v-if="stats.length"
+        v-motion-fade-visible-once
+        :delay="550"
         class="mt-12 flex flex-wrap gap-x-12 gap-y-6"
       >
         <div

@@ -2,7 +2,7 @@
   <div class="mx-auto w-full py-4 sm:py-0 md:max-w-lg">
     <p class="text-2xl font-bold md:text-3xl">Request verification link</p>
     <p class="text-muted-foreground mt-1">Enter your email to request link</p>
-    <div class="border-border bg-surface mt-6 rounded-lg border p-6">
+    <div class="border-border bg-surface mt-6 rounded-lg border px-8 py-6">
       <form @submit="onSubmit">
         <UiInput
           id="email"

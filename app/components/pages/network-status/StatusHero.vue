@@ -11,6 +11,7 @@
 
     <div class="wrapper relative py-16 lg:py-24">
       <p
+        v-motion-fade-visible-once
         class="border-border bg-surface/70 text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm"
       >
         <span class="relative flex size-2">
@@ -26,11 +27,15 @@
       </p>
 
       <h1
+        v-motion-reveal
+        :delay="100"
         class="mt-6 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl"
       >
         Network and delivery updates.
       </h1>
       <p
+        v-motion-fade-visible-once
+        :delay="300"
         class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
       >
         The latest network and delivery status of the GSM networks we send to,
@@ -38,6 +43,8 @@
       </p>
 
       <div
+        v-motion-slide-visible-once-bottom
+        :delay="450"
         class="border-border bg-surface/70 mt-10 flex max-w-2xl flex-col gap-4 rounded-2xl border p-5 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between"
       >
         <div class="flex items-start gap-3">

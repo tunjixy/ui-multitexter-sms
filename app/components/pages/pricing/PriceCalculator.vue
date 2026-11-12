@@ -1,6 +1,8 @@
 <template>
   <aside
     id="calculator"
+    v-motion-slide-visible-once-bottom
+    :delay="200"
     aria-labelledby="calculator-title"
     class="bg-surface border-border scroll-mt-32 rounded-3xl border p-6 sm:p-8 lg:sticky lg:top-32"
   >
@@ -11,7 +13,12 @@
         <Calculator class="size-5" />
       </span>
       <div>
-        <h2 id="calculator-title" class="text-lg font-semibold">
+        <h2
+          id="calculator-title"
+          v-motion-reveal
+          :delay="300"
+          class="text-lg font-semibold"
+        >
           Price calculator
         </h2>
         <p class="text-muted-foreground text-sm">

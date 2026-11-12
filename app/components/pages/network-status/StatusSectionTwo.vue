@@ -5,27 +5,30 @@
     >
       <div class="lg:sticky lg:top-32">
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Status history
         </p>
         <h2
+          v-motion-reveal
+          :delay="100"
           class="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Every update, newest first.
         </h2>
-        <p class="text-muted-foreground mt-5 leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="300"
+          class="text-muted-foreground mt-5 leading-relaxed"
+        >
           Filter by network to see the updates that affect your recipients.
         </p>
 
-        <fieldset class="mt-8">
+        <fieldset v-motion-fade-visible-once :delay="400" class="mt-8">
           <legend class="sr-only">Filter by network</legend>
           <div class="flex flex-wrap gap-2">
-            <label
-              v-for="option in filters"
-              :key="option.value"
-              :class="chip"
-            >
+            <label v-for="option in filters" :key="option.value" :class="chip">
               <input
                 v-model="selected"
                 type="radio"
@@ -48,7 +51,11 @@
           </div>
         </fieldset>
 
-        <dl class="border-border mt-10 space-y-3 border-t pt-6">
+        <dl
+          v-motion-fade-visible-once
+          :delay="500"
+          class="border-border mt-10 space-y-3 border-t pt-6"
+        >
           <div
             v-for="(style, type) in types"
             :key="type"
@@ -73,6 +80,7 @@
         <li
           v-for="(update, index) in filtered"
           :key="`${update.network}-${update.date}`"
+          v-motion-slide-visible-once-bottom
           class="relative pb-10 pl-8 last:pb-0 sm:pl-10"
         >
           <span

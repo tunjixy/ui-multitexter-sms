@@ -141,9 +141,23 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/sitemap',
     'nuxt-schema-org',
+    '@vueuse/motion/nuxt',
   ],
   imports: {
     dirs: ['stores'],
+  },
+  motion: {
+    directives: {
+      reveal: {
+        initial: { y: 32, opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' },
+        visibleOnce: {
+          y: 0,
+          opacity: 1,
+          clipPath: 'inset(-15% -5% -15% -5%)',
+          transition: { duration: 900, ease: [0.22, 1, 0.36, 1] },
+        },
+      },
+    },
   },
   colorMode: {
     classSuffix: '',

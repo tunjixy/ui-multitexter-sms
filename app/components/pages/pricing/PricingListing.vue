@@ -11,6 +11,8 @@
       <li
         v-for="(tier, index) in tiers"
         :key="tier.id"
+        v-motion-slide-visible-once-bottom
+        :delay="index * 75"
         :aria-current="tier.id === activeTier?.id ? 'true' : undefined"
         :class="[
           'bg-surface flex items-center gap-4 rounded-2xl border p-4 transition-[border-color,box-shadow] ease-in sm:gap-5 sm:p-5',
@@ -56,7 +58,11 @@
       </li>
     </ol>
 
-    <div class="border-border bg-surface mt-8 rounded-2xl border p-5">
+    <div
+      v-motion-fade-visible-once
+      :delay="200"
+      class="border-border bg-surface mt-8 rounded-2xl border p-5"
+    >
       <p class="flex items-center gap-2 text-sm font-semibold">
         <Info class="text-primary size-4" />
         Good to know

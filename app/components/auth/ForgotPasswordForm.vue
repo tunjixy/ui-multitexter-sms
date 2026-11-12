@@ -4,7 +4,7 @@
     <p class="text-muted-foreground mt-1">
       Enter your email to reset your password
     </p>
-    <div class="border-border bg-surface mt-6 rounded-lg border p-6">
+    <div class="border-border bg-surface mt-6 rounded-lg border px-8 py-6">
       <form @submit="onSubmit">
         <UiInput
           id="email"

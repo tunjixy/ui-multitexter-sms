@@ -5,26 +5,35 @@
     >
       <div>
         <p
+          v-motion-fade-visible-once
           class="text-primary text-xs font-semibold tracking-[0.25em] uppercase"
         >
           Direct Channels
         </p>
 
         <h2
+          v-motion-reveal
+          :delay="100"
           class="text-foreground mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl"
         >
           Connect with the right department.
         </h2>
 
-        <p class="text-muted-foreground mt-5 text-base leading-relaxed">
+        <p
+          v-motion-fade-visible-once
+          :delay="300"
+          class="text-muted-foreground mt-5 text-base leading-relaxed"
+        >
           Choose the fastest channel for your enquiry or visit our headquarters
           located at the commercial tech corridor in Sabo, Yaba.
         </p>
 
         <ul class="mt-10 flex flex-col gap-4">
           <li
-            v-for="channel in channels"
+            v-for="(channel, index) in channels"
             :key="channel.email"
+            v-motion-slide-visible-once-bottom
+            :delay="index * 100"
             class="bg-surface border-border hover:border-primary/40 flex gap-4 rounded-2xl border p-6 transition-colors ease-in"
           >
             <span
@@ -51,14 +60,22 @@
         </ul>
       </div>
 
-      <div class="bg-surface border-border rounded-3xl border p-6 sm:p-10">
+      <div
+        v-motion-slide-visible-once-bottom
+        :delay="200"
+        class="bg-surface border-border rounded-3xl border p-6 sm:p-10"
+      >
         <span
           class="bg-primary/10 text-primary border-primary/30 inline-block rounded-full border px-3 py-1 text-xs font-medium"
         >
           Quick Inquiry
         </span>
 
-        <h2 class="text-foreground mt-4 text-2xl font-semibold tracking-tight">
+        <h2
+          v-motion-reveal
+          :delay="300"
+          class="text-foreground mt-4 text-2xl font-semibold tracking-tight"
+        >
           Send us a message
         </h2>
         <p class="text-muted-foreground mt-2 text-sm">
