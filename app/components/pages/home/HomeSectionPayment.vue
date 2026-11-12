@@ -21,7 +21,7 @@
           :delay="methods.length * 75"
           class="bg-dark-blue col-span-full flex min-h-15 items-center rounded-lg border border-white/10 px-5 py-4 text-sm text-white"
         >
-          First Bank, Diamond Bank, GTBank and Zenith Bank
+          Providus Bank
         </li>
       </ul>
 
