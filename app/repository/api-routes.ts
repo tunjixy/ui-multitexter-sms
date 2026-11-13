@@ -54,6 +54,21 @@ export const apiRoutes = {
     summary: '/profile-summary',
     update: '/update-profile',
   },
+  phonebook: {
+    contactLists: (page?: number) =>
+      page ? `/contactlist?page=${page}` : `/contactlist?limit=all`,
+    createList: '/contactlist/create',
+    updateList: (listId: number) => `/contactlist/update/${listId}`,
+    deleteList: '/contactlist/delete',
+    contacts: (listId: number, page: number) =>
+      `/contacts/${listId}?page=${page}`,
+    contactNetworkCount: (listId: number) => `/contacts-count/${listId}`,
+    createContact: '/contacts/create',
+    uploadContact: '/contacts/upload',
+    searchContacts: (listId: number, page: number) =>
+      `/contacts/${listId}?page=${page}`,
+    deleteContact: '/contacts/delete',
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes

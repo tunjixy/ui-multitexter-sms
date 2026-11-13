@@ -9,6 +9,7 @@ import { AlertApi } from './modules/alert'
 import { HistoryApi } from './modules/history'
 import { BirthdayApi } from './modules/birthday'
 import { ProfileApi } from './modules/profile'
+import { PhonebookApi } from './modules/phonebook'
 
 const http = new HttpClient()
 
@@ -23,4 +24,5 @@ export const apiClient = {
   history: HistoryApi(http),
   birthday: BirthdayApi(http),
   profile: ProfileApi(http),
+  phonebook: PhonebookApi(http),
 }

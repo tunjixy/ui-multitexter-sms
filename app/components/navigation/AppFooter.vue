@@ -67,7 +67,7 @@
           <address
             class="text-muted-foreground mt-3.5 text-sm leading-relaxed not-italic"
           >
-            6th Floor, 294 Herbert Macaulay Way, Sabo Yaba, Lagos
+            131 Obafemi Awolowo way, Ikeja, Lagos, Nigeria
           </address>
           <a
             href="mailto:info@multitexter.com"
