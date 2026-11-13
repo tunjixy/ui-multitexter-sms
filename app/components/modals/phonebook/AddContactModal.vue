@@ -35,7 +35,7 @@
         Cancel
       </UiButton>
       <UiButton type="submit" :form="formId" radius="lg" :loading="loading">
-        {{ loading ? '' : 'Add contact' }}
+        Add contact
       </UiButton>
     </template>
   </UiModal>

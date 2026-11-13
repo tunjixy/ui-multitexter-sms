@@ -271,7 +271,7 @@
             :disabled="disabled"
             class="mt-8"
           >
-            {{ loading ? '' : 'Submit' }}
+            Submit
           </UiButton>
         </form>
       </div>

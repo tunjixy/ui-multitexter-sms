@@ -22,7 +22,7 @@
         :loading="loading"
         @click="onDelete"
       >
-        {{ loading ? '' : 'Delete list' }}
+        Delete list
       </UiButton>
     </template>
   </UiModal>

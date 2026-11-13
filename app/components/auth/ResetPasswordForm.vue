@@ -61,7 +61,7 @@
           :loading="loading"
           class="mt-8"
         >
-          {{ loading ? '' : 'Reset password' }}
+          Reset password
         </UiButton>
       </form>
 

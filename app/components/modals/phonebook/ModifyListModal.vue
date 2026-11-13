@@ -42,7 +42,7 @@
         :loading="loading"
         :disabled="disabled"
       >
-        {{ loading ? '' : list ? 'Save changes' : 'Create list' }}
+        {{ list ? 'Save changes' : 'Create list' }}
       </UiButton>
     </template>
   </UiModal>

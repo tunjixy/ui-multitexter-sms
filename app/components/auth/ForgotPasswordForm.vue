@@ -26,7 +26,7 @@
           :loading="loading"
           class="mt-5"
         >
-          {{ loading ? '' : 'Continue' }}
+          Continue
         </UiButton>
         <p class="mt-3 text-center text-sm">
           <NuxtLink

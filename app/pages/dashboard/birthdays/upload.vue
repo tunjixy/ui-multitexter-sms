@@ -83,7 +83,7 @@
 
         <div class="mt-6 flex justify-end">
           <UiButton type="submit" radius="lg" :loading="loading">
-            {{ loading ? '' : 'Upload birthdays' }}
+            Upload birthdays
           </UiButton>
         </div>
       </form>

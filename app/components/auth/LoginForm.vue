@@ -39,7 +39,7 @@
           :loading="loading"
           class="mt-8"
         >
-          {{ loading ? '' : 'Login' }}
+          Login
         </UiButton>
         <p class="mt-5 text-center text-sm">
           Don't have an account?

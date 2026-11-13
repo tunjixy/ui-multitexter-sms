@@ -2,7 +2,7 @@
   <dialog
     ref="dialog"
     v-bind="passthroughAttrs"
-    data-ui-modal
+    :data-ui-modal="baseId"
     :data-closing="closing || undefined"
     :class="dialogClasses"
     :aria-labelledby="title || $slots.header ? titleId : undefined"
@@ -150,8 +150,14 @@ function close() {
   open.value = false
 }
 
+const modalStack = useModalStack()
 const closing = ref(false)
 let run = 0
+
+const animationsSettled = async (dialog: HTMLDialogElement) => {
+  await nextTick()
+  await Promise.allSettled(dialog.getAnimations().map((a) => a.finished))
+}
 
 // Closing waits for the slide-down to finish before the <dialog> is closed.
 const sync = async (isOpen: boolean) => {
@@ -162,13 +168,15 @@ const sync = async (isOpen: boolean) => {
   if (isOpen) {
     closing.value = false
     if (!dialog.open) dialog.showModal()
+    await animationsSettled(dialog)
+    if (thisRun === run) modalStack.add(baseId)
     return
   }
 
   if (!dialog.open) return
+  modalStack.remove(baseId)
   closing.value = true
-  await nextTick()
-  await Promise.allSettled(dialog.getAnimations().map((a) => a.finished))
+  await animationsSettled(dialog)
   if (thisRun !== run) return
   closing.value = false
   dialog.close()
@@ -180,6 +188,7 @@ onMounted(() => sync(open.value))
 watch(open, sync, { flush: 'post' })
 
 onBeforeUnmount(() => {
+  modalStack.remove(baseId)
   if (dialogEl.value?.open) dialogEl.value.close()
 })
 
@@ -189,6 +198,7 @@ const onCancel = (event: Event) => {
 }
 
 const onClose = () => {
+  modalStack.remove(baseId)
   closing.value = false
   if (open.value) open.value = false
   emit('close')

@@ -89,7 +89,7 @@
         :loading="loading"
         :disabled="disabled"
       >
-        {{ loading ? '' : copy.submit }}
+        {{ copy.submit }}
       </UiButton>
     </template>
   </UiModal>

@@ -8,17 +8,22 @@
   >
     <span
       v-if="loading"
-      class="size-4 animate-spin rounded-full border-2 border-current border-r-transparent"
+      class="absolute inset-0 m-auto size-4 animate-spin rounded-full border-2 border-current border-r-transparent"
       aria-hidden="true"
     />
-    <span v-else-if="$slots.leading" class="inline-flex text-[1.1em]">
-      <slot name="leading" />
-    </span>
-    <span>
-      <slot />
-    </span>
-    <span v-if="$slots.trailing" class="inline-flex text-[1.1em]">
-      <slot name="trailing" />
+    <span
+      class="inline-flex items-center justify-center gap-2"
+      :class="{ invisible: loading }"
+    >
+      <span v-if="$slots.leading" class="inline-flex text-[1.1em]">
+        <slot name="leading" />
+      </span>
+      <span>
+        <slot />
+      </span>
+      <span v-if="$slots.trailing" class="inline-flex text-[1.1em]">
+        <slot name="trailing" />
+      </span>
     </span>
   </button>
 </template>
@@ -50,7 +55,7 @@ const emit = defineEmits<{
   click: [event: MouseEvent]
 }>()
 
-const base = `shrink-0 items-center justify-center gap-2 whitespace-nowrap border font-semibold leading-none
+const base = `relative shrink-0 items-center justify-center whitespace-nowrap border font-semibold leading-none
   select-none outline-none transition focus-visible:ring-3
   disabled:cursor-not-allowed disabled:opacity-50`
 

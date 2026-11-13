@@ -52,7 +52,7 @@
         :loading="loading"
         :disabled="disabled"
       >
-        {{ loading ? '' : 'Update password' }}
+        Update password
       </UiButton>
     </template>
   </UiModal>

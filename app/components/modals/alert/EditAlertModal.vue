@@ -100,7 +100,7 @@
         :loading="loading"
         :disabled="disabled"
       >
-        {{ loading ? '' : ' Save changes' }}
+        Save changes
       </UiButton>
     </template>
   </UiModal>

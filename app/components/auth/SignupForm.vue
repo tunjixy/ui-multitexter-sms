@@ -80,7 +80,7 @@
           :loading="loading"
           class="mt-8"
         >
-          {{ loading ? '' : 'Create Account' }}
+          Create Account
         </UiButton>
         <p class="mt-5 text-center text-sm">
           Already have an account?

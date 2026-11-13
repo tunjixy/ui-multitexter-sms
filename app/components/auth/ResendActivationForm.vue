@@ -24,7 +24,7 @@
           :loading="loading"
           class="mt-5"
         >
-          {{ loading ? '' : 'Submit' }}
+          Submit
         </UiButton>
       </form>
     </div>
