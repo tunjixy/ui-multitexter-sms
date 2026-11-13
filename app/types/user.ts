@@ -59,3 +59,14 @@ export interface UserDetail {
 export interface UserDetailRes {
   success: UserDetail
 }
+
+export interface ChangePasswordReq {
+  current_password: string
+  password: string
+  password_confirmation: string
+}
+
+export interface ChangePasswordRes {
+  status: number
+  msg: string
+}

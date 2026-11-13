@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { ChevronsUpDown, LogOut, Settings, User } from '@lucide/vue'
+import { ChevronsUpDown, LogOut, User } from '@lucide/vue'
 import type {
   DropdownMenuAction,
   DropdownMenuItem,
@@ -49,13 +49,13 @@ const email = computed(() => user.value?.email)
 const initials = computed(() => name.value?.charAt(0))
 
 const accountItems: DropdownMenuItem[] = [
-  { id: 'settings', label: 'Settings', icon: Settings },
+  { id: 'profile', label: 'Profile', icon: User },
   { type: 'divider' },
   { id: 'logout', label: 'Log out', icon: LogOut, danger: true },
 ]
 
 const onAccountSelect = ({ id }: DropdownMenuAction) => {
-  navigateTo(id === 'logout' ? '/logout' : '/dashboard/settings')
+  navigateTo(id === 'logout' ? '/logout' : '/dashboard/profile')
   emit('close')
 }
 </script>

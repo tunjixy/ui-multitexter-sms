@@ -5,6 +5,8 @@ import type {
   ActivateUserRes,
   UserDetailRes,
   RequestVerificationLinkRes,
+  ChangePasswordReq,
+  ChangePasswordRes,
 } from '@/types/user'
 
 export const userApi = (http: HttpClient) => ({
@@ -18,4 +20,8 @@ export const userApi = (http: HttpClient) => ({
     ),
   detail: (options?: ApiOptions) =>
     http.post<UserDetailRes>(apiRoutes.user.detail, undefined, options),
+  changePassword: (body: ChangePasswordReq) =>
+    http.post<ChangePasswordRes>(apiRoutes.user.password, body, {
+      skipLogoutOn401: true,
+    }),
 })

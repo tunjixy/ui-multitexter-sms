@@ -8,6 +8,7 @@ import { ReferralApi } from './modules/referral'
 import { AlertApi } from './modules/alert'
 import { HistoryApi } from './modules/history'
 import { BirthdayApi } from './modules/birthday'
+import { ProfileApi } from './modules/profile'
 
 const http = new HttpClient()
 
@@ -21,4 +22,5 @@ export const apiClient = {
   alert: AlertApi(http),
   history: HistoryApi(http),
   birthday: BirthdayApi(http),
+  profile: ProfileApi(http),
 }

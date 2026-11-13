@@ -14,11 +14,7 @@
         class="mt-6"
       />
 
-      <div
-        role="tabpanel"
-        :aria-label="activeLabel"
-        class="mt-6 overflow-x-clip"
-      >
+      <div role="tabpanel" class="mt-6 overflow-x-clip">
         <Transition name="slide-tab" mode="out-in">
           <KeepAlive>
             <PaymentHistory v-if="activeTab === 'payments'" />
@@ -49,10 +45,6 @@ const tabs = [
     label: 'Transactions',
   },
 ]
-
-const activeLabel = computed(
-  () => tabs.find((tab) => tab.value === activeTab.value)?.label,
-)
 
 definePageMeta({
   layout: 'dashboard',

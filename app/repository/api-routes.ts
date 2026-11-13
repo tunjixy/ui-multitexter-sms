@@ -12,6 +12,7 @@ export const apiRoutes = {
     activate: '/user/activate',
     resendActivation: '/user/resend-activate',
     detail: '/detail',
+    password: '/change-password',
   },
   contact: {
     contactSales: '/contact-sales',
@@ -47,6 +48,11 @@ export const apiRoutes = {
     stop: (id: number) => `/birthday/stop/${id}`,
     upload: '/birthday-upload',
     delete: (id: number) => `/birthday/delete/${id}`,
+  },
+  profile: {
+    bio: '/profile',
+    summary: '/profile-summary',
+    update: '/update-profile',
   },
 } as const
 
