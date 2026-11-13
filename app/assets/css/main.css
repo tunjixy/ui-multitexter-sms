@@ -40,7 +40,7 @@
   .dark {
     --color-primary: #40c2f3;
     --color-background: #08090a;
-    --color-surface: #232323;
+    --color-surface: #1e1e1c;
     --color-foreground: #ffffff;
     --color-muted-foreground: rgba(255, 255, 255, 0.6);
     --color-border: rgba(227, 227, 227, 0.1);
