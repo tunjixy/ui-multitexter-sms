@@ -24,12 +24,12 @@
         <UiButton
           variant="outline"
           radius="lg"
-          @click="navigateTo('/dashboard/share-credit')"
+          @click="navigateTo('/dashboard/share-unit')"
         >
           <template #leading>
             <Share2Icon class="size-4" />
           </template>
-          Share credit
+          Share units
         </UiButton>
       </div>
     </div>

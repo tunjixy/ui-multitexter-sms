@@ -110,9 +110,9 @@ const menus = ref<Menu[]>([
         url: '/dashboard/bank-deposit',
       },
       {
-        title: 'Share Credit',
+        title: 'Share Unit',
         icon: markRaw(Share2),
-        url: '/dashboard/share-credit',
+        url: '/dashboard/share-unit',
       },
     ],
   },

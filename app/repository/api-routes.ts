@@ -69,6 +69,10 @@ export const apiRoutes = {
       `/contacts/${listId}?page=${page}`,
     deleteContact: '/contacts/delete',
   },
+  share: {
+    lists: '/recent-shared',
+    transfer: '/share-credit',
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes
