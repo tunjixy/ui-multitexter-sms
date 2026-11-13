@@ -5,6 +5,7 @@ import type {
   UnsubscribeRes,
   SenderNameReq,
   SenderNameRes,
+  BankDepositRes,
 } from '@/types/misc'
 
 export const miscApi = (http: HttpClient) => ({
@@ -12,4 +13,6 @@ export const miscApi = (http: HttpClient) => ({
     http.post<UnsubscribeRes>(apiRoutes.misc.unsubscribe, body),
   senderNameRequest: (body: SenderNameReq) =>
     http.post<SenderNameRes>(apiRoutes.misc.senderNameRequest, body),
+  submitPaymentDetails: (formData: FormData) =>
+    http.post<BankDepositRes>(apiRoutes.misc.payment, formData),
 })

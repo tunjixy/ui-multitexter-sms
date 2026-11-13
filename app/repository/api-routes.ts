@@ -26,6 +26,7 @@ export const apiRoutes = {
   misc: {
     unsubscribe: '/unsubscribe',
     senderNameRequest: '/sender-name-request',
+    payment: '/payment-user',
   },
   referral: {
     referrals: '/referral',

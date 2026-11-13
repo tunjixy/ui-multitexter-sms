@@ -21,3 +21,17 @@ export interface SenderNameRes {
   msg: string
   status: number
 }
+
+export interface BankDepositReq {
+  paymentdate: string
+  branch: string
+  depositor: string
+  amount: string
+  tellerno: string
+  payer_phone: string
+  receipt?: File
+}
+export interface BankDepositRes {
+  msg: string
+  status: number
+}
