@@ -20,6 +20,9 @@ export const apiRoutes = {
     feedback: '/send-feedback',
   },
   payment: {
+    prices: '/prices',
+    calculateUnit: '/unit-price-online',
+    purchaseUnit: '/buysms',
     verify: '/payment/verify',
     flutterWaveVerify: '/flutter-payment/verify',
   },

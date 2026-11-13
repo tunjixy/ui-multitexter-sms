@@ -1,5 +1,5 @@
 <template>
-  <aside
+  <div
     id="calculator"
     v-motion-slide-visible-once-bottom
     :delay="200"
@@ -98,30 +98,30 @@
         {{ formatNaira(amount) }}
       </p>
 
-      <dl class="border-primary/15 mt-5 space-y-2.5 border-t pt-5 text-sm">
+      <div class="border-primary/15 mt-5 space-y-2.5 border-t pt-5 text-sm">
         <div class="flex justify-between gap-4">
-          <dt class="text-muted-foreground">Units needed</dt>
-          <dd class="font-medium tabular-nums">
+          <div class="text-muted-foreground">Units needed</div>
+          <div class="font-medium tabular-nums">
             {{ formatNumberWithComma(units) }}
-          </dd>
+          </div>
         </div>
         <div class="flex justify-between gap-4">
-          <dt class="text-muted-foreground">Price per unit</dt>
-          <dd class="font-medium tabular-nums">
+          <div class="text-muted-foreground">Price per unit</div>
+          <div class="font-medium tabular-nums">
             {{
               matchedTier
                 ? formatNaira(matchedTier.price, { fixed: true })
                 : '—'
             }}
-          </dd>
+          </div>
         </div>
         <div class="flex justify-between gap-4">
-          <dt class="text-muted-foreground">Package</dt>
-          <dd class="text-right font-medium">
+          <div class="text-muted-foreground">Package</div>
+          <div class="text-right font-medium">
             {{ matchedTier?.title ?? '—' }}
-          </dd>
+          </div>
         </div>
-      </dl>
+      </div>
 
       <p
         v-if="minimumUnits && units && units < minimumUnits"
@@ -132,11 +132,13 @@
       </p>
     </div>
 
+    <slot :units="units" />
+
     <p class="text-muted-foreground mt-6 text-sm leading-relaxed">
       Pay online with your ATM, credit or debit card and get your units credited
       instantly.
     </p>
-  </aside>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -144,6 +146,10 @@ import { Calculator, Minus, Plus, Users } from '@lucide/vue'
 import type { Price } from '@/types/pricing'
 
 const tier = defineModel<Price | null>('tier', { default: null })
+
+defineSlots<{
+  default?: (props: { units: number }) => unknown
+}>()
 
 const { prices } = usePricing()
 

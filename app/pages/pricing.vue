@@ -26,10 +26,7 @@ if (error.value) {
   })
 }
 
-prices.value =
-  data.value?.status === 1
-    ? [...data.value.data].sort((a, b) => a.minimum_units - b.minimum_units)
-    : []
+prices.value = data.value?.status === 1 ? sortPrices(data.value.data) : []
 
 usePageSeo({
   title: 'Bulk SMS Pricing in Nigeria',

@@ -1,6 +1,6 @@
 <template>
   <section class="py-16 lg:py-24">
-    <div class="wrapper grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+    <div class="wrapper grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
       <div>
         <p
           v-motion-fade-visible-once
