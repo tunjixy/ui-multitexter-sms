@@ -201,19 +201,13 @@ const onSubmit = handleSubmit(async (values) => {
       dnd: priorityRoute.value ? 1 : 0,
     })
     if (response.status === 1) {
-      $toast.success(
-        response.msg || 'Your messages are on their way.',
-        response.bulk_id
-          ? {
-              action: {
-                label: 'View sent messages',
-                onClick: () => navigateTo('/dashboard/sent-messages'),
-              },
-            }
-          : undefined,
-      )
+      $toast.success(response.msg || 'Your messages are on their way.')
       fetchUserDetails()
-      emit('sent')
+      if (response.bulk_id) {
+        await navigateTo(`/dashboard/sms-detail/${response.bulk_id}`)
+      } else {
+        emit('sent')
+      }
     } else {
       lowBalance.value = response.status === INSUFFICIENT_UNITS
       errorMessage.value =
