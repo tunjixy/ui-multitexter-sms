@@ -13,6 +13,7 @@ import { PhonebookApi } from './modules/phonebook'
 import { ShareApi } from './modules/share'
 import { ReportApi } from './modules/report'
 import { MessageApi } from './modules/message'
+import { PersonalizedApi } from './modules/personalized'
 
 const http = new HttpClient()
 
@@ -31,4 +32,5 @@ export const apiClient = {
   share: ShareApi(http),
   report: ReportApi(http),
   message: MessageApi(http),
+  personalized: PersonalizedApi(http),
 }

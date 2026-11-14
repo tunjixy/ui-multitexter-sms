@@ -83,6 +83,7 @@ export const apiRoutes = {
     download: '/report/download',
   },
   message: {
+    senderId: '/verified-sender',
     drafts: (page: number) => `/message/draft?page=${page}`,
     draft: (draftId: number) => `/message/draft/${draftId}`,
     deleteDraft: (draftId: number) => `/draft/delete/${draftId}`,
@@ -94,6 +95,11 @@ export const apiRoutes = {
     deleteScheduled: '/scheduled/delete',
     pauseScheduled: (scheduledId: number) => `/scheduled/pause/${scheduledId}`,
     resumeScheduled: (scheduledId: number) => `/scheduled/start/${scheduledId}`,
+  },
+  personalized: {
+    upload: '/personalized/messages',
+    preview: '/personalized/firstmessage',
+    send: '/personalized/send',
   },
 } as const
 

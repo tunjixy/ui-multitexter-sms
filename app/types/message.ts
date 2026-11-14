@@ -94,3 +94,12 @@ export interface MessageDeleteRes {
   status: number
   msg: string
 }
+
+export interface VerifiedSender {
+  sender: string
+}
+
+export interface VerifiedSenderRes {
+  data: VerifiedSender[]
+  status: number
+}

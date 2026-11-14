@@ -1,6 +1,7 @@
 import type { HttpClient } from '../http'
 import { apiRoutes } from '../api-routes'
 import type {
+  VerifiedSenderRes,
   DraftMessagesRes,
   DraftMessageRes,
   MessageDeleteRes,
@@ -12,6 +13,7 @@ import type {
 } from '@/types/message'
 
 export const MessageApi = (http: HttpClient) => ({
+  fetchSenderId: () => http.get<VerifiedSenderRes>(apiRoutes.message.senderId),
   fetchDrafts: (page: number) =>
     http.get<DraftMessagesRes>(apiRoutes.message.drafts(page)),
   fetchDraft: (draftId: number) =>
