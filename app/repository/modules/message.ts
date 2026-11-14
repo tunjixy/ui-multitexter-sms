@@ -4,6 +4,8 @@ import type {
   DraftMessagesRes,
   DraftMessageRes,
   MessageDeleteRes,
+  SentMessageRes,
+  SentMessagesRes,
 } from '@/types/message'
 
 export const MessageApi = (http: HttpClient) => ({
@@ -13,4 +15,12 @@ export const MessageApi = (http: HttpClient) => ({
     http.get<DraftMessageRes>(apiRoutes.message.draft(draftId)),
   deleteDraft: (draftId: number) =>
     http.post<MessageDeleteRes>(apiRoutes.message.deleteDraft(draftId)),
+  fetchSentMessages: (page: number) =>
+    http.get<SentMessagesRes>(apiRoutes.message.sents(page)),
+  fetchSentMessage: (sentId: number) =>
+    http.get<SentMessageRes>(apiRoutes.message.sent(sentId)),
+  deleteSentMessage: (sentId: number) =>
+    http.post<MessageDeleteRes>(apiRoutes.message.deleteSent, {
+      messageids: sentId,
+    }),
 })

@@ -22,6 +22,31 @@ export interface DraftMessagesRes {
   total: number
 }
 
+export interface SentMessage {
+  content: string
+  disptachtime: string
+  id: number
+  priority: number
+  recipient: string
+  sender_name: string
+  status: string
+  unit_charge: string
+  volume: number
+}
+
+export interface SentMessageRes {
+  data: SentMessage
+  status: number
+}
+
+export interface SentMessagesRes {
+  data: SentMessage[]
+  page: number
+  rows: number
+  status: number
+  total: number
+}
+
 export interface MessageDeleteRes {
   status: number
   msg: string

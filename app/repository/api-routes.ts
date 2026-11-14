@@ -86,6 +86,9 @@ export const apiRoutes = {
     drafts: (page: number) => `/message/draft?page=${page}`,
     draft: (draftId: number) => `/message/draft/${draftId}`,
     deleteDraft: (draftId: number) => `/draft/delete/${draftId}`,
+    sents: (page: number) => `/message/sent?page=${page}`,
+    sent: (sentId: number) => `/message/sent/${sentId}`,
+    deleteSent: '/message/delete',
   },
 } as const
 
