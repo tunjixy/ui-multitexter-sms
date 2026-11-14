@@ -10,6 +10,8 @@ import type {
   ScheduledMessageRes,
   ScheduledMessagesRes,
   ScheduledStatusRes,
+  SMSStatusRes,
+  MessageResendRes,
 } from '@/types/message'
 
 export const MessageApi = (http: HttpClient) => ({
@@ -44,4 +46,8 @@ export const MessageApi = (http: HttpClient) => ({
     http.post<ScheduledStatusRes>(
       apiRoutes.message.pauseScheduled(scheduledId),
     ),
+  fetchSMSStatus: (page: number) =>
+    http.get<SMSStatusRes>(apiRoutes.message.smsStatus(page)),
+  resendSMS: (remoteMsgId: string) =>
+    http.get<MessageResendRes>(apiRoutes.message.resend(remoteMsgId)),
 })

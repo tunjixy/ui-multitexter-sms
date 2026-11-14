@@ -103,3 +103,35 @@ export interface VerifiedSenderRes {
   data: VerifiedSender[]
   status: number
 }
+
+export interface SMSStatus {
+  comment: string
+  country_code: string
+  created_at: string
+  displayname: string
+  file_path: string
+  forcednd: number
+  id: number
+  message: string
+  message_type_id: string
+  remote_msg_id: string
+  resume_no: number
+  sms_type: number
+  status: string
+  user_id: number
+}
+
+export interface SMSStatusRes {
+  data: {
+    data: SMSStatus[]
+    current_page: number
+    per_page: number
+    total: number
+  }
+  status: number
+}
+
+export interface MessageResendRes {
+  status: number
+  msg: string
+}

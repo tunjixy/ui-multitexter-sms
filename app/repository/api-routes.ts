@@ -95,6 +95,8 @@ export const apiRoutes = {
     deleteScheduled: '/scheduled/delete',
     pauseScheduled: (scheduledId: number) => `/scheduled/pause/${scheduledId}`,
     resumeScheduled: (scheduledId: number) => `/scheduled/start/${scheduledId}`,
+    smsStatus: (page: number) => `/bulksms/status?page=${page}`,
+    resend: (remoteMsgId: string) => `/bulksms/restart/${remoteMsgId}`,
   },
   personalized: {
     upload: '/personalized/messages',
