@@ -6,6 +6,9 @@ import type {
   MessageDeleteRes,
   SentMessageRes,
   SentMessagesRes,
+  ScheduledMessageRes,
+  ScheduledMessagesRes,
+  ScheduledStatusRes,
 } from '@/types/message'
 
 export const MessageApi = (http: HttpClient) => ({
@@ -23,4 +26,20 @@ export const MessageApi = (http: HttpClient) => ({
     http.post<MessageDeleteRes>(apiRoutes.message.deleteSent, {
       messageids: sentId,
     }),
+  fetchScheduledMessages: (page: number) =>
+    http.get<ScheduledMessagesRes>(apiRoutes.message.scheduleds(page)),
+  fetchScheduledMessage: (scheduledId: number) =>
+    http.get<ScheduledMessageRes>(apiRoutes.message.scheduled(scheduledId)),
+  deleteScheduledMessage: (scheduledId: number) =>
+    http.post<MessageDeleteRes>(apiRoutes.message.deleteScheduled, {
+      messageids: scheduledId,
+    }),
+  resumeScheduledMessage: (scheduledId: number) =>
+    http.post<ScheduledStatusRes>(
+      apiRoutes.message.resumeScheduled(scheduledId),
+    ),
+  pauseScheduledMessage: (scheduledId: number) =>
+    http.post<ScheduledStatusRes>(
+      apiRoutes.message.pauseScheduled(scheduledId),
+    ),
 })

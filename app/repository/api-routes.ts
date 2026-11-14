@@ -89,6 +89,11 @@ export const apiRoutes = {
     sents: (page: number) => `/message/sent?page=${page}`,
     sent: (sentId: number) => `/message/sent/${sentId}`,
     deleteSent: '/message/delete',
+    scheduleds: (page: number) => `/scheduled/message?page=${page}`,
+    scheduled: (scheduledId: number) => `/scheduled/message/${scheduledId}`,
+    deleteScheduled: '/scheduled/delete',
+    pauseScheduled: (scheduledId: number) => `/scheduled/pause/${scheduledId}`,
+    resumeScheduled: (scheduledId: number) => `/scheduled/start/${scheduledId}`,
   },
 } as const
 

@@ -47,6 +47,49 @@ export interface SentMessagesRes {
   total: number
 }
 
+export interface ScheduledMessage {
+  country_id: number
+  created: string
+  delivery_status_id: number
+  dispatchtime: string
+  displayname: string
+  forcednd: number
+  icount: number
+  id: number
+  iscancel: number
+  listids: string
+  message: string
+  message_type_id: number
+  modified: string
+  recipient: string
+  recurrent_count: number
+  recurrent_type: number
+  remotemsgid: string
+  scheduledstatus: string
+  status: string
+  total_sent: number
+  user_id: number
+  tag: number
+}
+
+export interface ScheduledMessageRes {
+  data: ScheduledMessage
+  status: number
+}
+
+export interface ScheduledMessagesRes {
+  data: ScheduledMessage[]
+  page: number
+  rows: number
+  status: number
+  total: number
+}
+
+export interface ScheduledStatusRes {
+  status: number
+  msg: string
+}
+
 export interface MessageDeleteRes {
   status: number
   msg: string
