@@ -203,7 +203,7 @@ const when = (value: string | null | undefined) =>
 const rows = computed(() =>
   (birthdays.value ?? []).map((birthday, index) => ({
     birthday,
-    number: (currentPage.value - 1) * perPage.value + index + 1,
+    number: incrementPageNumber(index, perPage.value, currentPage.value),
     lastSent: when(birthday.last_sent),
     nextSent: when(birthday.next_sent),
   })),

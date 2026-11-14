@@ -168,7 +168,7 @@ const totalPages = computed(() =>
 const rows = computed(() =>
   (lists.value ?? []).map((list, index) => ({
     list,
-    number: (currentPage.value - 1) * perPage.value + index + 1,
+    number: incrementPageNumber(index, perPage.value, currentPage.value),
     created: list.created
       ? {
           date: useDateFormat(list.created, 'Do MMM YYYY').value,

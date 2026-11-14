@@ -7,7 +7,7 @@
     <label
       v-if="label"
       :id="labelId"
-      class="text-sm font-semibold"
+      class="text-muted-foreground text-sm"
       @click="triggerEl?.focus()"
     >
       {{ label }}

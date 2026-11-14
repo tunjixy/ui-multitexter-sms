@@ -32,6 +32,7 @@
     "vue-router": "^5.4.0",
     "vue-sonner": "^2.0.9",
     "vue3-recaptcha-v2": "^2.1.0",
+    "write-excel-file": "^4.1.1",
     "yup": "^1.7.1"
   },
   "devDependencies": {

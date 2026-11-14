@@ -77,6 +77,16 @@ export const apiRoutes = {
     lists: '/recent-shared',
     transfer: '/share-credit',
   },
+  report: {
+    lists: (page: number) => `/message/report?page=${page}`,
+    filter: (page: number) => `/message/report?page=${page}`,
+    download: '/report/download',
+  },
+  message: {
+    drafts: (page: number) => `/message/draft?page=${page}`,
+    draft: (draftId: number) => `/message/draft/${draftId}`,
+    deleteDraft: (draftId: number) => `/draft/delete/${draftId}`,
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes

@@ -311,7 +311,7 @@ const networkStats = computed(() => {
 const rows = computed(() =>
   contacts.value.map((contact, index) => ({
     contact,
-    number: (currentPage.value - 1) * perPage.value + index + 1,
+    number: incrementPageNumber(index, perPage.value, currentPage.value),
   })),
 )
 
