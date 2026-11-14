@@ -105,6 +105,12 @@ export const apiRoutes = {
     preview: '/personalized/firstmessage',
     send: '/personalized/send',
   },
+  senderId: {
+    lists: '/get-sender',
+    create: '/register-sender',
+    update: (id: number) => `/update-sender/${id}`,
+    delete: '/delete-sender',
+  },
 } as const
 
 export type ApiRoutes = typeof apiRoutes

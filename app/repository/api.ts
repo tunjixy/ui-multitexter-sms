@@ -14,6 +14,7 @@ import { ShareApi } from './modules/share'
 import { ReportApi } from './modules/report'
 import { MessageApi } from './modules/message'
 import { PersonalizedApi } from './modules/personalized'
+import { SenderIdApi } from './modules/sender-id'
 
 const http = new HttpClient()
 
@@ -33,4 +34,5 @@ export const apiClient = {
   report: ReportApi(http),
   message: MessageApi(http),
   personalized: PersonalizedApi(http),
+  senderId: SenderIdApi(http),
 }

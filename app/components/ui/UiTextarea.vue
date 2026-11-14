@@ -1,6 +1,6 @@
 <template>
   <div :class="['text-foreground flex flex-col gap-1', attrs.class]">
-    <label v-if="label" :for="textareaId" class="text-sm font-semibold">
+    <label v-if="label" :for="textareaId" class="text-muted-foreground text-sm">
       {{ label }}
     </label>
 
