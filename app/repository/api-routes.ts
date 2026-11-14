@@ -97,6 +97,7 @@ export const apiRoutes = {
     resumeScheduled: (scheduledId: number) => `/scheduled/start/${scheduledId}`,
     smsStatus: (page: number) => `/bulksms/status?page=${page}`,
     resend: (remoteMsgId: string) => `/bulksms/restart/${remoteMsgId}`,
+    queued: (page: number) => `/queued-messages?page=${page}`,
   },
   personalized: {
     upload: '/personalized/messages',

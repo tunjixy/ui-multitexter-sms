@@ -131,6 +131,20 @@ export interface SMSStatusRes {
   status: number
 }
 
+export interface QueuedSMS {
+  id: string
+  remotemsgids: string
+  total_left: number
+}
+
+export interface QueuedSMSRes {
+  data: QueuedSMS[]
+  page: number
+  rows: number
+  status: number
+  total: number
+}
+
 export interface MessageResendRes {
   status: number
   msg: string
