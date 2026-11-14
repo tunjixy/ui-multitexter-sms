@@ -13,6 +13,7 @@ import type {
   SMSStatusRes,
   MessageResendRes,
   QueuedSMSRes,
+  SMSDetailRes,
 } from '@/types/message'
 
 export const MessageApi = (http: HttpClient) => ({
@@ -53,4 +54,6 @@ export const MessageApi = (http: HttpClient) => ({
     http.get<MessageResendRes>(apiRoutes.message.resend(remoteMsgId)),
   fetchQueuedMessages: (page: number) =>
     http.get<QueuedSMSRes>(apiRoutes.message.queued(page)),
+  fetchSMSDetail: (id: number) =>
+    http.get<SMSDetailRes>(apiRoutes.message.smsDetail(id)),
 })

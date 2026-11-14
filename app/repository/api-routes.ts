@@ -98,6 +98,7 @@ export const apiRoutes = {
     smsStatus: (page: number) => `/bulksms/status?page=${page}`,
     resend: (remoteMsgId: string) => `/bulksms/restart/${remoteMsgId}`,
     queued: (page: number) => `/queued-messages?page=${page}`,
+    smsDetail: (id: number) => `/bulksms/status/${id}`,
   },
   personalized: {
     upload: '/personalized/messages',

@@ -145,6 +145,24 @@ export interface QueuedSMSRes {
   total: number
 }
 
+export interface SMSDetail {
+  comment: string
+  created_at: string
+  displayname: string
+  file_path: string
+  id: number
+  message: string
+  message_type_id: number
+  remote_msg_id: string
+  status: string
+  user_id: string
+}
+
+export interface SMSDetailRes {
+  data: SMSDetail
+  status: number
+}
+
 export interface MessageResendRes {
   status: number
   msg: string
